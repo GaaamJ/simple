@@ -1,4 +1,5 @@
 # New Project Guide
+
 > 새 프로젝트 시작할 때마다 이 순서대로 진행합니다.
 
 ---
@@ -17,20 +18,30 @@
 
 ---
 
-## STEP 1 — pipeline-template 클론
+## STEP 1 — Use this template
 
-GitHub Desktop에서:
+GitHub에서 pipeline-template repo 열고:
+
 ```
-File → Clone Repository
-URL: https://github.com/[yourname]/pipeline-template
-Local Path: C:\[경로]\[프로젝트명]
+"Use this template" 버튼 클릭
+→ "Create a new repository"
+→ 프로젝트 이름 입력 (예: my-game)
+→ Create repository
+→ GitHub Desktop으로 clone
 ```
 
 ---
 
-## STEP 2 — setup.bat 실행
+## STEP 2 — 프로젝트 파일 생성
 
-`setup.bat` 더블클릭 → 환경 확인 + Agent Teams 활성화.
+Unity의 경우:
+
+```
+Unity Hub → New Project
+Location: [clone한 폴더]\src\
+```
+
+다른 프로젝트의 경우 `src/` 폴더 안에 생성.
 
 ---
 
@@ -39,6 +50,7 @@ Local Path: C:\[경로]\[프로젝트명]
 `templates/CLAUDE.root.template.md` 참고해서 루트 `CLAUDE.md` 작성.
 
 Claude Desktop 활용 권장:
+
 ```
 이 프로젝트 개요를 바탕으로 CLAUDE.md를 작성해줘: [개요 설명]
 ```
@@ -48,6 +60,7 @@ Claude Desktop 활용 권장:
 ## STEP 4 — 모듈 구조 설계
 
 필요한 모듈 수만큼 폴더 생성:
+
 ```
 src/
 ├── module-a/
@@ -71,6 +84,7 @@ Changes 탭 → Summary 입력 → Commit to main → Push origin
 ## STEP 6 — Codex로 Notion 동기화
 
 Codex에서:
+
 ```
 CLAUDE.md를 읽고 아래 구조로 Notion 페이지를 작성해줘:
 - Overview / Goals / Tech Stack / Module Map / Current Status / Key Decisions

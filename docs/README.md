@@ -21,32 +21,44 @@ AGENTS.md 작성                  ↓
 
 ## 도구별 역할
 
-| 도구 | 역할 |
-|------|------|
-| Claude Desktop | CLAUDE.md / AGENTS.md 작성 및 설계 |
+| 도구           | 역할                                        |
+| -------------- | ------------------------------------------- |
+| Claude Desktop | CLAUDE.md / AGENTS.md 작성 및 설계          |
 | GitHub Desktop | 전체 버전 관리 (파이프라인 + 프로젝트 파일) |
-| Codex | CLAUDE.md → Notion 자동 동기화 |
-| Claude Code | Agent Teams 기반 모듈별 구현 |
+| Codex          | CLAUDE.md → Notion 자동 동기화              |
+| Claude Code    | Agent Teams 기반 모듈별 구현                |
 
 ---
 
 ## 빠른 시작
 
 ### 처음 사용하는 경우
+
 → `docs/SETUP_GUIDE.md` 참고
 
 ### 새 프로젝트 시작
+
+**STEP 1 — Use this template**
+
 ```
-1. 이 repo를 clone → 프로젝트명으로 폴더 생성
-2. setup.bat 실행
-3. CLAUDE.md 내용 채우기
-4. GitHub Desktop으로 커밋
-5. Codex로 Notion 동기화
-6. claude 실행
+이 repo 상단 "Use this template" 버튼 클릭
+→ "Create a new repository"
+→ 프로젝트 이름 입력 (예: my-game)
+→ Create repository
+→ GitHub Desktop으로 clone
 ```
-→ `docs/NEW_PROJECT_GUIDE.md` 참고
+
+**STEP 2 — 프로젝트 파일 생성**
+
+```
+Unity Hub → New Project
+Location: [clone한 폴더]/src/
+```
+
+→ 이후 `docs/NEW_PROJECT_GUIDE.md` 참고
 
 ### 템플릿 없이 빠르게 시작
+
 → `docs/FREE_START_GUIDE.md` 참고
 
 ---
@@ -80,11 +92,14 @@ pipeline-template/
 ## 주요 개념
 
 ### CLAUDE.md
+
 Claude Code가 프로젝트 컨텍스트를 파악하는 핵심 파일.
+
 - 루트: 전체 프로젝트 개요, 모듈 맵, 의존성
 - 모듈별: 해당 모듈의 역할, 인터페이스, 담당 범위
 
 ### Agent Teams
+
 여러 모듈을 동시에 작업할 때 사용하는 Claude Code 멀티 에이전트 기능.
 Team Lead가 작업을 분배하고 각 teammate가 독립적으로 구현 후 결과를 통합.
 
@@ -92,6 +107,7 @@ Team Lead가 작업을 분배하고 각 teammate가 독립적으로 구현 후 �
 > → `docs/PROJECT_START_GUIDE.md` 참고
 
 ### 새 프로젝트 = 이 repo clone
+
 파이프라인 구조를 매번 새로 만들 필요 없이 clone 후 CLAUDE.md만 채우면 바로 시작 가능.
 
 ---
