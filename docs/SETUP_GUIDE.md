@@ -86,6 +86,7 @@ Windows:
 ```
 
 > `[username]`과 경로를 실제 값으로 변경.
+> **이 경로를 `templates/PLANNER_PROJECT.md`의 프로젝트 경로 항목과 동일하게 맞춰야 합니다.**
 > 여러 경로 접근 필요 시 경로 추가 가능:
 > ```json
 > "args": ["-y", "@modelcontextprotocol/server-filesystem",
