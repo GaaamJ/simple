@@ -49,6 +49,30 @@ Team Lead가 작업을 분배하고 각 teammate가 독립적으로 구현 후 �
 
 ---
 
+## 템플릿 폴더 구조
+
+```
+pipeline-template/
+├── README.md                        ← 프로젝트 README 플레이스홀더
+├── CLAUDE.md                        ← 전체 프로젝트 컨텍스트
+├── AGENTS.md                        ← 에이전트 역할 정의
+├── setup.bat                        ← 환경 셋업 및 Agent Teams 활성화
+├── .claude/
+│   └── settings.json                ← Claude Code 설정
+├── templates/
+│   ├── CLAUDE.root.template.md      ← 최상위 CLAUDE.md 작성 가이드
+│   └── CLAUDE.module.template.md    ← 모듈별 CLAUDE.md 작성 가이드
+├── docs/
+│   ├── SETUP_GUIDE.md               ← 새 환경 최초 셋업
+│   ├── NEW_PROJECT_GUIDE.md         ← 새 프로젝트 시작 루틴
+│   ├── PROJECT_START_GUIDE.md       ← 작업 시작 + 토큰 효율 가이드
+│   ├── FREE_START_GUIDE.md          ← 템플릿 없이 자유 시작
+│   └── PIPELINE_GUIDE.md            ← 파이프라인 구조 설명 (이 파일)
+└── src/                             ← 실제 프로젝트 파일 (Claude Code가 CLAUDE.md 기반으로 생성)
+```
+
+---
+
 ## 참고 문서
 
 - [Claude Code 공식 문서](https://claude.ai/code)
