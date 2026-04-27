@@ -13,8 +13,13 @@ CLAUDE.md 기반 모듈별 구현. Team Lead가 작업을 분해하고 teammate�
 1. CLAUDE.md + AGENTS.md 읽기
 2. Codex 호출 → Notion 동기화 확인
 3. Module Map의 실행 순서 / 병렬 가능 여부 확인
-4. 순서 및 병렬 판단 후 teammate 생성
-5. 각 teammate에게 모듈 할당
+4. **[안전 지점] 실행 계획 사용자에게 제시 후 승인 대기**
+   - 생성할 teammate 목록
+   - 각 teammate의 담당 모듈 및 역할
+   - 실행 순서 및 병렬 여부
+   - 예상되는 모호한 부분 또는 확인 필요 사항
+   → 사용자 승인 없이 다음 단계로 진행하지 않음
+5. 승인 후 teammate 생성 및 모듈 할당
 6. 구현 완료 후 결과 통합 및 검토
 
 ## 해야 할 것 (Team Lead)
