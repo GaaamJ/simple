@@ -24,7 +24,11 @@
 - 프로젝트 목표 및 제약 정의
 - Module Map 작성 (실행 순서 / 병렬 가능 포함)
 - 각 모듈의 역할과 인터페이스 계약 정의
-- CLAUDE.md, AGENTS.md, README.md 작성 및 업데이트
+- 루트 CLAUDE.md, AGENTS.md, README.md 작성 및 업데이트
+- 모듈별 CLAUDE.md 작성 (`src/[모듈명]/CLAUDE.md`)
+  - `templates/Claude.module.template.md` 참고
+  - Module Map의 각 모듈마다 생성
+  - Claude Code teammate의 worktree 진입점이 됨
 
 ## 하지 말 것
 - `.py` `.ts` `.js` 등 구현 파일 생성 / 수정
@@ -35,8 +39,9 @@
 → 위 행동이 유발될 것 같으면 즉시 멈추고 "설계 완료" 선언 후 세션 종료
 
 ## 완료 조건
-- [ ] 모든 모듈의 역할과 인터페이스 계약 정의 완료
+- [ ] 루트 CLAUDE.md 작성 완료 (Module Map 포함)
 - [ ] Module Map에 실행 순서 / 병렬 가능 여부 기입
+- [ ] 모듈별 CLAUDE.md 생성 완료 (`src/[모듈명]/CLAUDE.md`)
 - [ ] AGENTS.md 업데이트 완료
 - [ ] README.md 프로젝트 정보 기입 완료
 - [ ] "설계 완료" 선언

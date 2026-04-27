@@ -33,8 +33,9 @@
 - 새 모듈 추가 시
 
 ## 완료 조건
-- [ ] 모든 모듈의 CLAUDE.md 작성 완료
+- [ ] 루트 CLAUDE.md 작성 완료 (Module Map 포함)
 - [ ] Module Map에 실행 순서 / 병렬 가능 여부 기입
+- [ ] 모듈별 CLAUDE.md 생성 완료 (`src/[모듈명]/CLAUDE.md`)
 - [ ] AGENTS.md 업데이트 완료
 - [ ] README.md 프로젝트 정보 기입 완료
 - [ ] "설계 완료" 선언
