@@ -7,18 +7,6 @@
 
 ## 파이프라인 스킬
 
-### `/planner`
-**대상:** Claude Code 전용 slash command  
-Claude Code에서 planner 역할 경계를 로드합니다.
-
-**Claude Desktop에서는** Project Instructions 방식을 사용합니다:
-- `templates/PLANNER_PROJECT.md` 내용을 Claude Desktop Project Instructions에 붙여넣기
-- 해당 Project의 모든 채팅에 자동 적용
-
-**사용 시점:** Claude Code에서 설계 작업이 필요할 때
-
----
-
 ### `/documenter`
 **대상:** Codex  
 Codex의 역할 경계를 인지시킵니다.  
