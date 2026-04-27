@@ -8,11 +8,14 @@
 ## 파이프라인 스킬
 
 ### `/planner`
-**대상:** Claude Desktop  
-Claude Desktop의 역할 경계와 hard stop을 인지시킵니다.  
-설계·문서 작업만 수행하고 코드 작성은 하지 않는 상태로 진입.
+**대상:** Claude Code 전용 slash command  
+Claude Code에서 planner 역할 경계를 로드합니다.
 
-**사용 시점:** Claude Desktop에서 CLAUDE.md / AGENTS.md 작성 시작 전
+**Claude Desktop에서는** Project Instructions 방식을 사용합니다:
+- `templates/PLANNER_PROJECT.md` 내용을 Claude Desktop Project Instructions에 붙여넣기
+- 해당 Project의 모든 채팅에 자동 적용
+
+**사용 시점:** Claude Code에서 설계 작업이 필요할 때
 
 ---
 

@@ -49,17 +49,27 @@ GitHub에서 pipeline-template repo 열고:
 
 ### STEP 3 — Claude Desktop으로 문서 작성
 
-`templates/CLAUDE.root.template.md`를 참고해서 요청:
+#### Claude Desktop Project 설정 (최초 1회)
+
+역할 경계를 자동으로 강제하려면 Claude Desktop Project를 만들어두세요.
 
 ```
-/planner
+Claude Desktop → Projects → New Project
+→ Instructions에 templates/PLANNER_PROJECT.md 내용 붙여넣기
+→ MCP 파일시스템 연결 (프로젝트 경로)
+```
 
+이후 해당 Project의 모든 채팅에 Planner 역할 제한이 자동 적용됩니다.
+
+#### 문서 작성 요청
+
+Project 채팅에서:
+
+```
 templates/CLAUDE.root.template.md 읽고,
 아래 프로젝트 개요를 바탕으로 CLAUDE.md, AGENTS.md, README.md를 작성해줘:
 [프로젝트 개요]
 ```
-
-> `/planner` skill을 먼저 호출하면 Claude Desktop이 역할 경계를 인지한 상태에서 작업합니다.
 
 **Module Map 반드시 작성:**
 
