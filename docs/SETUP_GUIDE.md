@@ -11,7 +11,12 @@ https://www.python.org/downloads/
 
 ### Node.js
 https://nodejs.org/
-> Claude Desktop MCP 서버 실행에 필요
+> 두 가지 이유로 필요:
+> - Claude Desktop MCP 파일시스템 서버 실행 (`npx` 사용)
+> - Codex CLI 설치 및 실행 (`npm` 사용)
+>
+> Node.js 없이도 파이프라인 동작은 가능하지만,
+> Claude Desktop의 로컬 파일 자동 읽기/쓰기와 Codex Notion 연동이 수동 작업으로 대체됨.
 
 ### Git
 https://git-scm.com/
@@ -32,13 +37,12 @@ Extensions → "Claude Code" 검색 → Install
 npm install -g @anthropic-ai/claude-code
 ```
 
-### Codex (VSCode 익스텐션)
-VSCode에서:
+### Codex CLI (권장)
+```bash
+npm install -g @openai/codex
 ```
-Extensions → "Codex" 검색 → Install
-```
-또는 Codex 앱:
-https://chatgpt.com/codex
+> VSCode 익스텐션 Codex도 존재하나, Notion MCP 서버 감지 오류 이슈가 있어 CLI 권장.
+> VSCode 익스텐션은 파일 직접 참조(@file)는 가능하지만 MCP 연동이 불안정함.
 
 ---
 
@@ -172,7 +176,7 @@ Settings → General → "Template repository" 체크
 □ GitHub Desktop 설치
 □ Claude Desktop 설치 + MCP 파일시스템 설정
 □ Claude Code 설치
-□ Codex 설치 + Notion 연동
+□ Codex CLI 설치 + Notion 연동
 □ Agent Teams 활성화
 □ pipeline-template Template repository 설정
 ```
