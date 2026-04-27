@@ -49,6 +49,49 @@ Team Lead가 작업을 분배하고 각 teammate가 독립적으로 구현 후 �
 
 ---
 
+## Claude Code 진입 후 흐름
+
+Claude Code는 아래 순서로 작업합니다.
+
+```
+Claude Code 진입
+    ↓
+1. CLAUDE.md + AGENTS.md 읽기
+2. Codex 호출 → Notion 동기화 (구현 전 문서화 먼저)
+3. Module Map의 실행 순서 / 병렬 가능 여부 확인
+4. 순차 / 병렬 판단 후 teammate 생성
+5. 각 teammate가 모듈 독립 구현
+6. Team Lead 통합 및 검토
+```
+
+**Codex 호출 명령:**
+```bash
+cd [프로젝트 경로]
+codex
+# 프롬프트: "CLAUDE.md를 읽고 Notion 페이지를 업데이트해줘"
+```
+
+**teammate 생성 프롬프트 예시:**
+```
+Module Map 기준으로 실행 순서와 병렬 가능 여부 확인 후
+각 모듈 담당 teammate 생성해줘.
+각자 해당 모듈의 CLAUDE.md 읽고 독립적으로 작업 후 결과 공유해.
+```
+
+---
+
+## 에이전트 역할 경계 (skills)
+
+각 에이전트의 역할 경계와 hard stop은 `.claude/skills/`에 정의되어 있습니다.
+
+| skill | 대상 에이전트 | 호출 |
+|---|---|---|
+| planner | Claude Desktop | `/planner` |
+| documenter | Codex | `/documenter` |
+| implementer | Claude Code | `/implementer` |
+
+---
+
 ## 템플릿 폴더 구조
 
 ```
@@ -58,7 +101,11 @@ pipeline-template/
 ├── AGENTS.md                        ← 에이전트 역할 정의
 ├── setup.bat                        ← 환경 셋업 및 Agent Teams 활성화
 ├── .claude/
-│   └── settings.json                ← Claude Code 설정
+│   ├── settings.json                ← Claude Code 설정
+│   └── skills/
+│       ├── planner/SKILL.md         ← Claude Desktop 역할 경계
+│       ├── documenter/SKILL.md      ← Codex 역할 경계
+│       └── implementer/SKILL.md     ← Claude Code 역할 경계
 ├── templates/
 │   ├── CLAUDE.root.template.md      ← 최상위 CLAUDE.md 작성 가이드
 │   └── CLAUDE.module.template.md    ← 모듈별 CLAUDE.md 작성 가이드
