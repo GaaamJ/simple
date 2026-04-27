@@ -3,43 +3,46 @@
 
 ---
 
-## 필수 설치 목록
+## 1. 필수 설치
 
-### 1. Python
+### Python
 https://www.python.org/downloads/
-
 > 설치 시 **"Add Python to PATH"** 반드시 체크
 
-```bash
-python --version  # 확인
-```
+### Node.js
+https://nodejs.org/
+> Claude Desktop MCP 서버 실행에 필요
 
-### 2. Git
+### Git
 https://git-scm.com/
 
-```bash
-git --version  # 확인
-```
-
-### 3. GitHub Desktop
+### GitHub Desktop
 https://desktop.github.com/
 
-### 4. Claude Desktop
+### Claude Desktop
 https://claude.ai/download
 
-### 5. Claude Code
-https://claude.ai/code
-
+### Claude Code (VSCode 익스텐션)
+VSCode에서:
+```
+Extensions → "Claude Code" 검색 → Install
+```
+또는 터미널:
 ```bash
-claude --version  # 확인
+npm install -g @anthropic-ai/claude-code
 ```
 
-### 6. Codex
+### Codex (VSCode 익스텐션)
+VSCode에서:
+```
+Extensions → "Codex" 검색 → Install
+```
+또는 Codex 앱:
 https://chatgpt.com/codex
 
 ---
 
-## Git 사용자 정보 설정 (최초 1회)
+## 2. Git 사용자 정보 설정
 
 ```bash
 git config --global user.name "Your Name"
@@ -48,26 +51,128 @@ git config --global user.email "your@email.com"
 
 ---
 
-## pipeline-template repo 클론
+## 3. Claude Desktop MCP 파일시스템 설정
 
-GitHub Desktop에서:
+Claude Desktop이 로컬 파일(CLAUDE.md 등)을 직접 읽고 수정할 수 있게 설정.
+
+### config 파일 열기
+
+Windows:
 ```
-File → Clone Repository
-URL: https://github.com/[yourname]/pipeline-template
-Local Path: 원하는 경로
+%APPDATA%\Claude\claude_desktop_config.json
+```
+> 없으면 직접 생성. 또는 Claude Desktop → Settings → Developer → Edit Config
+
+### config 내용 작성
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\[username]\\[프로젝트 루트 경로]"
+      ]
+    }
+  }
+}
+```
+
+> `[username]`과 경로를 실제 값으로 변경.
+> 여러 경로 접근 필요 시 경로 추가 가능:
+> ```json
+> "args": ["-y", "@modelcontextprotocol/server-filesystem",
+>   "C:\\Users\\username\\projects",
+>   "C:\\Users\\username\\Documents"]
+> ```
+
+### Claude Desktop 완전 재시작
+
+> 창 닫기가 아니라 시스템 트레이 → 우클릭 → Exit 후 재시작.
+
+### 확인
+
+재시작 후 채팅 입력창 우측 하단에 🔨 아이콘 표시되면 성공.
+
+---
+
+## 4. Codex Notion 연동
+
+Codex가 Notion 페이지를 읽고 쓸 수 있게 설정.
+
+### 터미널에서 1회 실행
+
+```bash
+codex mcp add notion --url https://mcp.notion.com/mcp
+```
+
+또는 `~/.codex/config.toml` 파일에 직접 추가:
+
+```toml
+[mcp_servers.notion]
+url = "https://mcp.notion.com/mcp"
+```
+
+### Notion OAuth 인증
+
+```bash
+codex mcp login notion
+```
+
+브라우저가 열리면 Notion 계정으로 로그인 → 워크스페이스 접근 허용.
+
+### 확인
+
+```bash
+codex
+# "CLAUDE.md 읽고 Notion 페이지 만들어줘" 테스트
 ```
 
 ---
 
-## setup.bat 실행
+## 5. Claude Code Agent Teams 활성화
 
-클론한 폴더에서 `setup.bat` 더블클릭.
+`setup.bat` 실행 또는 수동으로:
 
-- 환경 확인 자동 실행
-- Agent Teams 환경변수 영구 설정
+```bash
+setx CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS 1
+```
+
+또는 프로젝트 `.claude/settings.json` (이미 템플릿에 포함됨):
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}
+```
 
 ---
 
-## 완료
+## 6. pipeline-template 설정
+
+GitHub에서 pipeline-template repo:
+```
+Settings → General → "Template repository" 체크
+```
 
 이후 새 프로젝트는 `NEW_PROJECT_GUIDE.md` 참고.
+
+---
+
+## 완료 체크리스트
+
+```
+□ Python 설치
+□ Node.js 설치
+□ Git 설치
+□ GitHub Desktop 설치
+□ Claude Desktop 설치 + MCP 파일시스템 설정
+□ Claude Code 설치
+□ Codex 설치 + Notion 연동
+□ Agent Teams 활성화
+□ pipeline-template Template repository 설정
+```
