@@ -9,7 +9,7 @@
 ```
 □ STEP 1 — pipeline-template 클론
 □ STEP 2 — setup.bat 실행
-□ STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md 작성 (모듈 구조 포함)
+□ STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md / README.md 작성 (모듈 구조 포함)
 □ STEP 4 — Git 커밋
 □ STEP 5 — Codex로 Notion 동기화
 □ STEP 6 — Claude Code에서 구현 시작
@@ -31,7 +31,7 @@ GitHub에서 pipeline-template repo 열고:
 
 ---
 
-## STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md 작성
+## STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md / README.md 작성
 
 `templates/CLAUDE.root.template.md`를 참고해서 Claude Desktop에 요청:
 
@@ -54,6 +54,11 @@ Claude Code가 이 정보를 바탕으로 모듈 구조를 생성합니다.
 AGENTS.md도 함께 업데이트:
 ```
 AGENTS.md에서 각 teammate의 담당 모듈을 Module Map에 맞게 수정해줘.
+```
+
+README.md도 함께 작성:
+```
+README.md의 [Project Name], [한 줄 설명], 기술 스택, 폴더 구조를 프로젝트에 맞게 채워줘.
 ```
 
 ---
@@ -113,6 +118,7 @@ my-project/
 │   ├── SETUP_GUIDE.md
 │   ├── NEW_PROJECT_GUIDE.md
 │   ├── PROJECT_START_GUIDE.md
-│   └── FREE_START_GUIDE.md
+│   ├── FREE_START_GUIDE.md
+│   └── PIPELINE_GUIDE.md
 └── src/                  ← Claude Code가 CLAUDE.md 기반으로 모듈 구조 생성
 ```
