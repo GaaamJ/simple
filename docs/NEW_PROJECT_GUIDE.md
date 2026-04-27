@@ -9,11 +9,10 @@
 ```
 □ STEP 1 — pipeline-template 클론
 □ STEP 2 — setup.bat 실행
-□ STEP 3 — CLAUDE.md 내용 채우기
-□ STEP 4 — 모듈 구조 설계
-□ STEP 5 — Git 커밋
-□ STEP 6 — Codex로 Notion 동기화
-□ STEP 7 — Claude Code 실행
+□ STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md 작성 (모듈 구조 포함)
+□ STEP 4 — Git 커밋
+□ STEP 5 — Codex로 Notion 동기화
+□ STEP 6 — Claude Code 실행 → 모듈 구조 자동 생성
 ```
 
 ---
@@ -45,35 +44,34 @@ Location: [clone한 폴더]\src\
 
 ---
 
-## STEP 3 — CLAUDE.md 내용 채우기
+## STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md 작성
 
-`templates/CLAUDE.root.template.md` 참고해서 루트 `CLAUDE.md` 작성.
-
-Claude Desktop 활용 권장:
+`templates/CLAUDE.root.template.md`를 참고해서 Claude Desktop에 요청:
 
 ```
-이 프로젝트 개요를 바탕으로 CLAUDE.md를 작성해줘: [개요 설명]
+templates/CLAUDE.root.template.md 읽고,
+아래 프로젝트 개요를 바탕으로 CLAUDE.md를 작성해줘: [개요 설명]
+```
+
+**Module Map을 반드시 작성해야 합니다.**
+Claude Code가 이 정보를 바탕으로 모듈 구조를 생성합니다.
+
+```markdown
+## Module Map
+| 모듈 | 역할 | 의존 모듈 |
+|------|------|-----------|
+| module-a | ... | none |
+| module-b | ... | module-a |
+```
+
+AGENTS.md도 함께 업데이트:
+```
+AGENTS.md에서 각 teammate의 담당 모듈을 Module Map에 맞게 수정해줘.
 ```
 
 ---
 
-## STEP 4 — 모듈 구조 설계
-
-필요한 모듈 수만큼 폴더 생성:
-
-```
-src/
-├── module-a/
-│   └── CLAUDE.md    ← templates/CLAUDE.module.template.md 복사 후 작성
-└── module-b/
-    └── CLAUDE.md
-```
-
-모듈 간 의존성은 루트 `CLAUDE.md`의 Module Map에 반드시 기록.
-
----
-
-## STEP 5 — Git 커밋
+## STEP 4 — Git 커밋
 
 ```bash
 git add .
@@ -84,7 +82,12 @@ git push
 
 ---
 
-## STEP 6 — Codex로 Notion 동기화
+## STEP 5 — Codex로 Notion 동기화
+
+```bash
+cd [프로젝트 경로]
+codex
+```
 
 Codex에서:
 
@@ -95,12 +98,16 @@ CLAUDE.md를 읽고 아래 구조로 Notion 페이지를 작성해줘:
 
 ---
 
-## STEP 7 — Claude Code 실행
+## STEP 6 — Claude Code 실행 → 모듈 구조 자동 생성
 
-```bash
-cd C:\[프로젝트 경로]
-claude
+VSCode에서 프로젝트 폴더를 열고 Claude Code에서:
+
 ```
+CLAUDE.md와 AGENTS.md 읽고 Module Map 기반으로 src/ 아래 모듈 구조 생성해줘.
+```
+
+Claude Code가 CLAUDE.md의 Module Map을 읽고 `src/` 하위에 모듈 폴더와
+각 모듈의 `CLAUDE.md`를 자동으로 생성합니다.
 
 작업 시작 전 `PROJECT_START_GUIDE.md` 참고 권장.
 
