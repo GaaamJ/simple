@@ -24,7 +24,7 @@ AGENTS.md 작성                  ↓
 | 도구           | 역할                                        |
 | -------------- | ------------------------------------------- |
 | Claude Desktop | CLAUDE.md / AGENTS.md 작성 및 설계          |
-| GitHub Desktop | 전체 버전 관리 (파이프라인 + 프로젝트 파일) |
+| Git            | 전체 버전 관리 (파이프라인 + 프로젝트 파일) |
 | Codex          | CLAUDE.md → Notion 자동 동기화              |
 | Claude Code    | Agent Teams 기반 모듈별 구현                |
 
@@ -45,7 +45,7 @@ AGENTS.md 작성                  ↓
 → "Create a new repository"
 → 프로젝트 이름 입력 (예: my-game)
 → Create repository
-→ GitHub Desktop으로 clone
+→ Git으로 clone
 ```
 
 **STEP 2 — 프로젝트 파일 생성**

@@ -48,7 +48,7 @@ echo [완료] 파이프라인 환경 확인 완료
 echo.
 echo 다음 단계:
 echo  1. CLAUDE.md 내용 채우기 (Claude Desktop)
-echo  2. GitHub Desktop 으로 커밋
+echo  2. Git 으로 커밋
 echo  3. Codex 로 Notion 동기화
 echo  4. Claude Code 에서 구현 시작
 echo.

@@ -21,8 +21,9 @@ https://nodejs.org/
 ### Git
 https://git-scm.com/
 
-### GitHub Desktop
-https://desktop.github.com/
+### Git GUI (선택사항)
+> CLI에 익숙하지 않다면 GUI 툴 사용 권장.
+> GitHub Desktop / GitKraken / SourceTree 등 자유롭게 선택.
 
 ### Claude Desktop
 https://claude.ai/download
@@ -173,7 +174,7 @@ Settings → General → "Template repository" 체크
 □ Python 설치
 □ Node.js 설치
 □ Git 설치
-□ GitHub Desktop 설치
+□ Git GUI 설치 (선택사항)
 □ Claude Desktop 설치 + MCP 파일시스템 설정
 □ Claude Code 설치
 □ Codex CLI 설치 + Notion 연동

@@ -16,12 +16,11 @@
 
 ### 1. 빈 폴더 생성 + Git 초기화
 
-GitHub Desktop:
+```bash
+git init [프로젝트명]
+cd [프로젝트명]
 ```
-File → New Repository
-Name: [프로젝트명]
-Local Path: [원하는 경로]
-```
+> GUI 사용 시: GitHub Desktop / GitKraken / SourceTree 등에서 New Repository.
 
 ### 2. CLAUDE.md 최소 버전 작성
 
@@ -70,10 +69,10 @@ claude
 
 ```
 □ 빈 폴더 생성
-□ Git 초기화 (GitHub Desktop)
+□ Git 초기화
 □ CLAUDE.md 최소 버전 작성
 □ Claude Code 실행
-□ 작업 완료 후 GitHub Desktop 커밋
+□ 작업 완료 후 Git 커밋
 ```
 
 ---

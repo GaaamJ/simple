@@ -89,7 +89,7 @@ module-a 먼저 완료 후 → module-b 시작
 ## 작업 종료 루틴
 
 ```
-1. GitHub Desktop으로 커밋
+1. Git 커밋 (CLI 또는 GUI)
 2. CLAUDE.md Current Status 업데이트
 3. 필요 시 Codex로 Notion 재동기화
 ```

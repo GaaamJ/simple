@@ -71,7 +71,7 @@ module-a, module-b 각각 담당하는 teammate 생성해줘.
 Planner (Claude Desktop)
     CLAUDE.md / AGENTS.md 작성
           ↓
-    GitHub Desktop 커밋
+    Git 커밋
           ↓
 Documenter (Codex)
     Notion 동기화

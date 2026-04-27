@@ -11,7 +11,7 @@
 □ STEP 2 — setup.bat 실행
 □ STEP 3 — CLAUDE.md 내용 채우기
 □ STEP 4 — 모듈 구조 설계
-□ STEP 5 — GitHub Desktop 커밋
+□ STEP 5 — Git 커밋
 □ STEP 6 — Codex로 Notion 동기화
 □ STEP 7 — Claude Code 실행
 ```
@@ -27,7 +27,7 @@ GitHub에서 pipeline-template repo 열고:
 → "Create a new repository"
 → 프로젝트 이름 입력 (예: my-game)
 → Create repository
-→ GitHub Desktop으로 clone
+→ Git으로 clone
 ```
 
 ---
@@ -73,11 +73,14 @@ src/
 
 ---
 
-## STEP 5 — GitHub Desktop 커밋
+## STEP 5 — Git 커밋
 
+```bash
+git add .
+git commit -m "init: 프로젝트 초기 설정"
+git push
 ```
-Changes 탭 → Summary 입력 → Commit to main → Push origin
-```
+> GUI 사용 시 GitHub Desktop / GitKraken / SourceTree 등 자유롭게 사용.
 
 ---
 
