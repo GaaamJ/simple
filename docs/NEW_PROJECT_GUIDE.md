@@ -120,9 +120,5 @@ my-project/
 │   ├── NEW_PROJECT_GUIDE.md
 │   ├── PROJECT_START_GUIDE.md
 │   └── FREE_START_GUIDE.md
-└── src/
-    ├── module-a/
-    │   └── CLAUDE.md
-    └── module-b/
-        └── CLAUDE.md
+└── src/                  ← Claude Code가 CLAUDE.md 기반으로 모듈 구조 생성
 ```

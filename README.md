@@ -67,6 +67,7 @@ Location: [clone한 폴더]/src/
 
 ```
 pipeline-template/
+├── README.md                        ← 이 파일
 ├── CLAUDE.md                        ← 전체 프로젝트 컨텍스트
 ├── AGENTS.md                        ← 에이전트 역할 정의
 ├── setup.bat                        ← 환경 셋업 및 Agent Teams 활성화
@@ -80,11 +81,7 @@ pipeline-template/
 │   ├── NEW_PROJECT_GUIDE.md         ← 새 프로젝트 시작 루틴
 │   ├── PROJECT_START_GUIDE.md       ← 작업 시작 + 토큰 효율 가이드
 │   └── FREE_START_GUIDE.md          ← 템플릿 없이 자유 시작
-└── src/                             ← 실제 프로젝트 파일
-    ├── module-a/
-    │   └── CLAUDE.md
-    └── module-b/
-        └── CLAUDE.md
+└── src/                             ← 실제 프로젝트 파일 (Claude Code가 CLAUDE.md 기반으로 생성)
 ```
 
 ---
