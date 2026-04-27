@@ -24,4 +24,5 @@
 ## 참고
 
 - [CLAUDE.md](CLAUDE.md) — 프로젝트 컨텍스트 및 모듈 맵
-- [파이프라인 가이드](docs/PIPELINE_GUIDE.md) — Claude Desktop → Codex → Claude Code 흐름
+- [사용법](docs/USAGE_GUIDE.md) — 파이프라인 흐름 및 작업 루틴
+- [스킬 목록](docs/SKILLS.md) — 사용 가능한 skills
