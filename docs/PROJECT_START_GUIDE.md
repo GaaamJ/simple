@@ -24,9 +24,7 @@
 - 간단한 버그 수정 / 리팩토링
 - 파일 1~2개 수정
 
-```bash
-claude  # 단일 세션
-```
+> VSCode에서 Claude Code 채팅창에 바로 요청하면 됩니다.
 
 ### Agent Teams 사용
 아래 경우에만 Agent Teams 활성화:
@@ -35,10 +33,8 @@ claude  # 단일 세션
 - 모듈 간 인터페이스를 함께 설계할 때
 - 독립적으로 병렬 처리 가능한 작업이 3개 이상일 때
 
-```bash
-# .claude/settings.json에 이미 설정되어 있음
-claude  # Agent Teams 자동 활성화
-```
+> `.claude/settings.json`에 이미 설정되어 있어 별도 실행 명령 불필요.
+> Claude Code 채팅에서 teammate 생성을 요청하면 자동으로 활성화됩니다.
 
 ---
 

@@ -12,7 +12,7 @@
 □ STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md 작성 (모듈 구조 포함)
 □ STEP 4 — Git 커밋
 □ STEP 5 — Codex로 Notion 동기화
-□ STEP 6 — Claude Code 실행 → 모듈 구조 자동 생성
+□ STEP 6 — Claude Code에서 구현 시작
 ```
 
 ---
@@ -28,19 +28,6 @@ GitHub에서 pipeline-template repo 열고:
 → Create repository
 → Git으로 clone
 ```
-
----
-
-## STEP 2 — 프로젝트 파일 생성
-
-Unity의 경우:
-
-```
-Unity Hub → New Project
-Location: [clone한 폴더]\src\
-```
-
-다른 프로젝트의 경우 `src/` 폴더 안에 생성.
 
 ---
 
@@ -98,18 +85,15 @@ CLAUDE.md를 읽고 아래 구조로 Notion 페이지를 작성해줘:
 
 ---
 
-## STEP 6 — Claude Code 실행 → 모듈 구조 자동 생성
+## STEP 6 — Claude Code에서 구현 시작
 
-VSCode에서 프로젝트 폴더를 열고 Claude Code에서:
+VSCode에서 프로젝트 폴더를 열고 Claude Code 채팅창에서:
 
 ```
-CLAUDE.md와 AGENTS.md 읽고 Module Map 기반으로 src/ 아래 모듈 구조 생성해줘.
+CLAUDE.md와 AGENTS.md 읽고 구현 시작해줘.
 ```
 
-Claude Code가 CLAUDE.md의 Module Map을 읽고 `src/` 하위에 모듈 폴더와
-각 모듈의 `CLAUDE.md`를 자동으로 생성합니다.
-
-작업 시작 전 `PROJECT_START_GUIDE.md` 참고 권장.
+작업 방식은 `PROJECT_START_GUIDE.md` 참고.
 
 ---
 

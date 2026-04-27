@@ -48,13 +48,6 @@ AGENTS.md 작성                  ↓
 → Git으로 clone
 ```
 
-**STEP 2 — 프로젝트 파일 생성**
-
-```
-Unity Hub → New Project
-Location: [clone한 폴더]/src/
-```
-
 → 이후 `docs/NEW_PROJECT_GUIDE.md` 참고
 
 ### 템플릿 없이 빠르게 시작

@@ -9,10 +9,7 @@
 - 결과 통합 및 검토
 
 **실행:**
-```bash
-cd [project-root]
-claude
-```
+> VSCode에서 프로젝트 폴더를 열고 Claude Code 채팅창에서 바로 요청.
 
 ---
 
@@ -36,6 +33,12 @@ claude
 - CLAUDE.md → Notion 페이지 변환
 - 진행 상황 업데이트
 - 설계 결정 기록
+
+**실행:**
+```bash
+cd [프로젝트 경로]
+codex
+```
 
 **Notion 동기화 프롬프트:**
 ```
