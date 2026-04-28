@@ -55,9 +55,9 @@ Planner(Claude Desktop)가 작성한 문서를 맹신하지 않는다.
 ## 2단계 — 구현 방식 검증
 
 ### 검토 항목
-- 실행 순서 (Module Map 기반)
+- 실행 순서 (BLUEPRINT.md 실행 흐름 기반)
 - 병렬 가능 여부 → 단일 세션 vs worktree 결정
-  - 병렬 가능 모듈 2개 이상: worktree 사용
+  - BLUEPRINT.md 병렬 그룹에 모듈 2개 이상: worktree 사용
   - 아니면: 단일 세션
 - 기술적으로 막힐 수 있는 부분
 
