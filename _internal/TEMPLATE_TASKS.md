@@ -149,24 +149,76 @@ Done criteria:
 
 ---
 
-# Deferred Tasks
+# Active Tasks
+
+## Identity & Positioning
+
+- [x] 이 저장소를 AI 워크플로우 환경으로 명시적으로 정의하기
+- [x] "template", "starter", "boilerplate" 표현을 앱/프로젝트 템플릿 맥락에서 제거하기
+- [x] README에 "이게 무엇인가 / 무엇이 아닌가" 섹션 추가하기
+- [ ] GitHub 저장소 설명 업데이트 (필요 시)
+
+## Root Workflow Documents
+
+- [x] 루트 문서에서 placeholder/기본값 제거하기
+- [x] `CLAUDE.md` 재작성 — 실제 루트 컨텍스트
+- [x] `BLUEPRINT.md` 재작성 — Phase 기반 실행 흐름
+- [x] `TODO.md` 복원 — 깨끗한 사용자용 템플릿
+- [x] `CHANGELOG.md` 복원 — 깨끗한 사용자용 템플릿
+- [x] 루트 워크플로우 문서에 상태 레이블 추가 (Active Root Context 등)
+- [x] `src/README.md` 추가 — `src/` 사용 기준 설명
 
 ## Example Project
 
-- [ ] Add `examples/`
-- [ ] Create a minimal example project
-- [ ] Include example `CLAUDE.md`, `BLUEPRINT.md`, and `TODO.md`
+- [ ] `examples/` 추가하기
+- [ ] `examples/minimal/` 생성하기
+- [ ] 모든 일반 예시와 placeholder를 `examples/minimal/`로 이동하기
+- [ ] 예시 `CLAUDE.md` 생성하기
+- [ ] 예시 `BLUEPRINT.md` 생성하기
+- [ ] 예시 `TODO.md` 생성하기
+- [ ] 예시 `CHANGELOG.md` 생성하기
+- [ ] 예시 `src/example-module/CLAUDE.md` 생성하기
+- [ ] 예시 `src/example-module/CHANGELOG.md` 생성하기
+- [ ] `examples/README.md` 추가하기
+- [ ] 예시가 루트 워크플로우 상태와 충돌하지 않도록 확인하기
 
 ## Doctor Scripts
 
-- [ ] Add `scripts/doctor.bat`
-- [ ] Add `scripts/doctor.sh`
-- [ ] Check documentation paths
-- [ ] Check README links
-- [ ] Check docs language pairs
+- [ ] `scripts/doctor.bat` 추가하기
+- [ ] `scripts/doctor.sh` 추가하기
+- [ ] 문서 경로 확인
+- [ ] README 링크 확인
+- [ ] docs 언어 쌍 확인
+- [ ] 루트 워크플로우 파일 존재 확인 (CLAUDE.md, BLUEPRINT.md, TODO.md, CHANGELOG.md)
+- [ ] `.claude/skills/today/SKILL.md` 확인
+- [ ] `.claude/skills/implementer/SKILL.md` 확인
+- [ ] `CLAUDE.md` 참조가 실제 파일을 가리키는지 확인
+- [ ] `README.md` 참조가 실제 파일을 가리키는지 확인
+- [ ] `examples/minimal/`에 필수 예시 파일이 있는지 확인
+- [ ] 루트 문서에 해결되지 않은 placeholder 발견 시 경고
+- [ ] "template", "starter", "boilerplate" 표현이 허용 범위 밖에 등장하면 경고
+- [ ] 영어/한국어 문서 쌍 누락 시 경고
+- [ ] 명확한 pass/fail 요약 출력
+
+## Documentation Cleanup
+
+- [ ] 모든 docs에서 오래된 템플릿 지향 언어 감사
+- [ ] 아키텍처 문서를 워크플로우 환경 관점으로 업데이트
+- [ ] 설정 가이드를 워크플로우 환경 초기화 방법으로 업데이트
+- [ ] 사용 가이드를 일상적인 워크플로우 운영 방법으로 업데이트
+- [ ] 스킬 가이드를 `/today`와 `/implementer` 사용법 위주로 업데이트
+- [ ] 용어 사전 추가 (workflow environment, root context, execution blueprint 등)
 
 ## Release Workflow
 
-- [ ] Design version tags
-- [ ] Create GitHub Releases flow
-- [ ] Separate template changelog from project changelog if needed
+- [ ] GitHub Releases 흐름 생성
+- [ ] 워크플로우 채인지로그와 프로젝트 채인지로그 분리
+- [ ] `WORKFLOW_CHANGELOG.md` 추가 — 이 저장소 자체의 발전 이력용
+- [ ] 릴리스 노트 템플릿 추가
+
+## Optional Integrations
+
+- [ ] `integrations/notion/` 추가하기 (통합하기로 결정 시)
+- [ ] `integrations/notion/README.md` 추가하기
+- [ ] 예시 Notion 스키마 또는 동기화 매핑 추가하기
+- [ ] 구현이 없는 경우 통합 문서를 선택적(optional)으로 표시하기
