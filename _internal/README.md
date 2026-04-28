@@ -17,4 +17,17 @@
 | 파일 | 설명 |
 |------|------|
 | `TEMPLATE_TASKS.md` | 템플릿 제작 및 개선을 위한 작업 목록 |
-| `TEMPLATE_CHANGELOG.md` | 템플릿 자체의 변경 이력 |
+| `TEMPLATE_CHANGELOG.md` | 템플릿 자체의 변경 이력 (사용자 프로젝트 이력은 루트 `CHANGELOG.md` 사용) |
+| `RELEASE_NOTES.template.md` | 새 버전 릴리스 시 GitHub Release body에 붙여넣는 노트 템플릿 |
+
+## 릴리스 흐름
+
+1. `_internal/TEMPLATE_CHANGELOG.md`의 `[Unreleased]` 섹션에 변경사항 기록
+2. 릴리스 준비 완료 시: `[Unreleased]` → `[vX.Y.Z] — YYYY-MM-DD` 로 변경
+3. 태그 생성 및 푸시:
+   ```bash
+   git tag vX.Y.Z
+   git push origin vX.Y.Z
+   ```
+4. GitHub Actions가 자동으로 드래프트 릴리스 생성 (`.github/workflows/release.yml`)
+5. GitHub Releases 페이지에서 드래프트를 열고, `_internal/RELEASE_NOTES.template.md`를 참고해 릴리스 노트 작성 후 공개

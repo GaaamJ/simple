@@ -211,10 +211,10 @@ Done criteria:
 
 ## Release Workflow
 
-- [ ] GitHub Releases 흐름 생성
-- [ ] 워크플로우 채인지로그와 프로젝트 채인지로그 분리
-- [ ] `WORKFLOW_CHANGELOG.md` 추가 — 이 저장소 자체의 발전 이력용
-- [ ] 릴리스 노트 템플릿 추가
+- [x] GitHub Releases 흐름 생성
+- [x] 워크플로우 채인지로그와 프로젝트 채인지로그 분리
+- [x] `TEMPLATE_CHANGELOG.md` 추가 — 이 저장소 자체의 발전 이력용
+- [x] 릴리스 노트 템플릿 추가
 
 ## Optional Integrations
 
