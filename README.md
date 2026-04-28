@@ -50,9 +50,16 @@ A workflow environment for AI-assisted planning and implementation with Claude C
 
 ## Documentation
 
-Start with `docs/README.md`.
+English `.en.md` files are canonical. Korean `.ko.md` files are human-facing translations.
 
-- Architecture: `docs/ARCHITECTURE.en.md` / `docs/ARCHITECTURE.ko.md`
-- Usage: `docs/USAGE_GUIDE.en.md` / `docs/USAGE_GUIDE.ko.md`
-- Setup: `docs/SETUP_GUIDE.en.md` / `docs/SETUP_GUIDE.ko.md`
-- Skills: `docs/SKILLS.en.md` / `docs/SKILLS.ko.md`
+**English**
+- [Architecture](docs/ARCHITECTURE.en.md) — workflow structure and role boundaries
+- [Usage Guide](docs/USAGE_GUIDE.en.md) — day-to-day workflow
+- [Setup Guide](docs/SETUP_GUIDE.en.md) — tool installation and configuration
+- [Skills](docs/SKILLS.en.md) — `/today` and `/implementer` behavior
+
+**한국어**
+- [아키텍처](docs/ARCHITECTURE.ko.md) — 작업 흐름과 역할 경계
+- [사용 가이드](docs/USAGE_GUIDE.ko.md) — 일상 작업 흐름
+- [설치 가이드](docs/SETUP_GUIDE.ko.md) — 도구 설치와 설정
+- [스킬](docs/SKILLS.ko.md) — `/today`, `/implementer` 동작
