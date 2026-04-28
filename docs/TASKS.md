@@ -33,7 +33,7 @@
   - [ ] 현재 상태에 따라 다음 행동 안내 출력
     - [ ] 새 프로젝트면 Claude Desktop/Web에서 설계부터 진행하도록 안내
     - [ ] 설계 완료 상태면 `/today` 또는 `/implementer`로 구현 진입 안내
-    - [ ] Codex CLI가 없으면 Notion 동기화만 수동 처리 가능하다고 안내
+    - [ ] Codex CLI가 없으면 Notion 동기화만 수동 처리 가능하다고 안내1
 
 
 - [ ] `docs/TASKS.md` 운영 규칙 추가
@@ -42,12 +42,6 @@
   - [ ] 구현 중 발견사항은 바로 다음 작업 후보로 기록
   - [ ] 오래된 todo와 실제 구조가 어긋나지 않도록 정기 점검 규칙 추가
 
-- [ ] 모듈별 `CLAUDE.md` 인수인계 흐름 점검
-  - [ ] Claude Desktop/Web에서 설계한 내용이 `src/[module]/CLAUDE.md`로 충분히 전달되는지 확인
-  - [ ] Claude Code가 모듈별 `CLAUDE.md`만 보고 구현 가능한지 확인
-  - [ ] 결합되어야 하는 모듈들이 서로 참조 가능한지 확인
-  - [ ] 모듈 간 의존성이 `CLAUDE.md` Module Map 또는 `BLUEPRINT.md`에 반영되는지 확인
-  - [ ] 구현 단계에서 드러난 문제점이 다시 `docs/TASKS.md`로 돌아오는지 확인
 
 ---
 
@@ -75,3 +69,5 @@
 - [x] `templates/` → `planner/` 리네이밍 (Planner 전용 폴더 명확화)
 - [x] Planner 세션 진입 방식 개선 (bootstrap 지침 / 세션 시작 시 읽을 파일 순서 추가)
 - [x] `documenter` skill 삭제 + `docs/SKILLS.md` 정리 (today / implementer만 유지)
+- [x] `grill-me` skill 삭제
+- [x] 모듈별 `CLAUDE.md` 인수인계 흐름 점검 — BLUEPRINT ↔ 모듈 Interface 교차 검증 추가, worktree teammate에 BLUEPRINT.md 전달 추가

@@ -38,6 +38,7 @@ Planner(Claude Desktop)가 작성한 문서를 맹신하지 않는다.
 - [ ] 모듈 간 인수인계 데이터가 명시되어 있는가
 - [ ] 구현 대상 모듈의 `CLAUDE.md`가 존재하는가
 - [ ] 모듈 `CLAUDE.md`에 구현에 필요한 정보가 충분한가 (입출력, 역할, 주의사항)
+- [ ] BLUEPRINT.md 인수인계 테이블의 필드·타입이 모듈 `CLAUDE.md` Interface와 일치하는가
 
 ### 검증 후 처리
 - 문제 있으면: 구체적으로 무엇이 부족한지 명시 → "Planner 단계로 돌아가서 보완 필요" 안내 → 세션 종료
@@ -86,7 +87,7 @@ Planner(Claude Desktop)가 작성한 문서를 맹신하지 않는다.
 - 모듈 순서대로 해당 `CLAUDE.md` 읽고 구현
 
 ### worktree
-- teammate spawn: 루트 `CLAUDE.md` + 해당 모듈 `CLAUDE.md` 경로 전달
+- teammate spawn: 루트 `CLAUDE.md` + `BLUEPRINT.md` + 해당 모듈 `CLAUDE.md` 경로 전달
 - 각 teammate는 자기 모듈만 구현 후 결과 반환
 - Team Lead가 결과 통합 및 검토
 
