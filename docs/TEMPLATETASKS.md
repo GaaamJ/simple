@@ -20,7 +20,6 @@
 - [x] `docs/ARCHITECTURE.md` 추가 — AI 작업 운영 템플릿 구조, 전체 흐름, 파일 역할, 에이전트 역할 경계 명시
 - [x] `setup.bat` 상태 점검 스크립트로 강화 — 파일 존재·placeholder·설계 상태 기반 다음 행동 안내
 - [x] `TODO.md` + `CHANGELOG.md` 도입 — `docs/TASKS.md` gitignore 처리, `/today` · implementer · Planner 참조 전면 교체
-
 - [x] 파일 구조 정리 (.claude/, docs/, templates/, src/)
 - [x] Agent Teams 설정 (.claude/Settings.json)
 - [x] 문서 전면 정비 (Git 일반화, CLI 혼재 제거)
