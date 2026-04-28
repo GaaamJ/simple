@@ -2,8 +2,13 @@
 
 A lightweight Claude Code workflow template for any project.
 
-Simple does not generate application code or enforce a project architecture.
-It provides a minimal set of context files, commands, and conventions so Claude Code can work with your project more predictably — keeping each agent focused on only what it needs, reducing context and token use.
+Simple helps you keep Claude Code focused by separating project context,
+tasks, changelogs, and module-level instructions.
+
+- Not an app framework
+- Not a code generator
+- Not a dependency
+- Just a clean workflow scaffold for Claude Code
 
 ## What this is
 
