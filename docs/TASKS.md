@@ -13,15 +13,15 @@
   - [ ] 각 작업별로 읽어야 할 파일 목록을 함께 안내하도록 구성
   - [ ] 작업 종료 시 `docs/TASKS.md` 업데이트를 권장하도록 구성
 
-- [ ] `/implementer` skill 수정
-  - [ ] 바로 Agent Teams를 생성하지 않도록 수정
-  - [ ] 먼저 `CLAUDE.md`를 읽고 전체 프로젝트 맥락을 확인하도록 수정
-  - [ ] `docs/TASKS.md`를 읽고 현재 작업 큐를 확인하도록 수정
-  - [ ] `CLAUDE.md`의 Module Map을 확인하도록 수정
-  - [ ] 관련 `src/[module]/CLAUDE.md`만 선별해서 읽도록 수정
-  - [ ] 구현 시작 전 작업 계획을 사용자에게 먼저 제시하도록 수정
-  - [ ] 단일 세션으로 처리할지 Agent Teams로 분기할지 판단 기준 추가
-  - [ ] 구현 중 발견한 문제점 / 개선 방향을 `docs/TASKS.md`에 역으로 기록하도록 안내
+- [x] `/implementer` skill 수정
+  - [x] 바로 Agent Teams를 생성하지 않도록 수정
+  - [x] 먼저 `CLAUDE.md`를 읽고 전체 프로젝트 맥락을 확인하도록 수정
+  - [x] `docs/TASKS.md`를 읽고 현재 작업 큐를 확인하도록 수정
+  - [x] `CLAUDE.md`의 Module Map을 확인하도록 수정
+  - [x] 관련 `src/[module]/CLAUDE.md`만 선별해서 읽도록 수정
+  - [x] 구현 시작 전 작업 계획을 사용자에게 먼저 제시하도록 수정
+  - [x] 단일 세션으로 처리할지 Agent Teams로 분기할지 판단 기준 추가
+  - [x] 구현 중 발견한 문제점 / 개선 방향을 `docs/TASKS.md`에 역으로 기록하도록 안내
 
 - [ ] `docs/ARCHITECTURE.md` 추가
   - [ ] 이 템플릿이 코드 템플릿이 아니라 AI 작업 운영 템플릿임을 명시

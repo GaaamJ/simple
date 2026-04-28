@@ -15,9 +15,10 @@ Planner(Claude Desktop)가 작성한 문서를 맹신하지 않는다.
 ## 1단계 — 인수인계 문서 품질 검증
 
 ### 읽을 파일
-1. `BLUEPRINT.md` — 실행 흐름, 모듈 배정, 모듈 간 인수인계 확인
-2. 루트 `CLAUDE.md` — 전체 맥락, Module Map 확인
-3. 구현 대상 모듈의 `src/[모듈명]/CLAUDE.md` — 구현 디테일 확인
+1. `docs/TASKS.md` — 현재 작업 큐 및 우선순위 확인
+2. `BLUEPRINT.md` — 실행 흐름, 모듈 배정, 모듈 간 인수인계 확인
+3. 루트 `CLAUDE.md` — 전체 맥락, Module Map 확인
+4. 구현 대상 모듈의 `src/[모듈명]/CLAUDE.md` — 구현 디테일 확인
 
 ### 구현 대상 모듈 특정
 사용자가 기능명으로 진입한 경우(`/implementer A 기능`), 아래 순서로 해당 모듈을 특정한다:
@@ -88,6 +89,10 @@ Planner(Claude Desktop)가 작성한 문서를 맹신하지 않는다.
 - teammate spawn: 루트 `CLAUDE.md` + 해당 모듈 `CLAUDE.md` 경로 전달
 - 각 teammate는 자기 모듈만 구현 후 결과 반환
 - Team Lead가 결과 통합 및 검토
+
+### 구현 중 발견사항 기록
+구현하면서 발견한 문제점 / 개선 방향은 `docs/TASKS.md` "다음 세션에 할 것" 섹션에 추가한다.
+구현 완료 후 사용자에게 기록 여부를 확인한다.
 
 ---
 
