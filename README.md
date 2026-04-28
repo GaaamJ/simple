@@ -20,6 +20,8 @@ This repository is a lightweight workflow template for AI-assisted planning and 
 | `.claude/skills/implementer/SKILL.md` | `/implementer` scope and implementation rules |
 
 ## Documentation
+Start with `docs/README.md`.
+
 - Architecture: `docs/ARCHITECTURE.en.md` / `docs/ARCHITECTURE.ko.md`
 - Usage: `docs/USAGE_GUIDE.en.md` / `docs/USAGE_GUIDE.ko.md`
 - Setup: `docs/SETUP_GUIDE.en.md` / `docs/SETUP_GUIDE.ko.md`
@@ -33,4 +35,4 @@ English docs are the source of truth. Korean docs are human-facing translations.
 3. `/implementer [task]` reads only the root context, blueprint, TODO, and relevant module context.
 4. Completed work moves from `TODO.md` to `CHANGELOG.md`.
 
-See `docs/USAGE_GUIDE.en.md` for the full usage procedure.
+See `docs/README.md` for all documentation entry points.

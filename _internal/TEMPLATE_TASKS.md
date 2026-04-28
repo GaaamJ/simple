@@ -136,16 +136,16 @@ Done criteria:
 
 Goal: make the documentation entry points clearer for users and agents.
 
-- [ ] Consider adding `docs/README.md`
-- [ ] Link language-specific docs from `docs/README.md`
-- [ ] Link root `README.md` to `docs/README.md` if added
-- [ ] Verify all documentation links
+- [x] Consider adding `docs/README.md`
+- [x] Link language-specific docs from `docs/README.md`
+- [x] Link root `README.md` to `docs/README.md` if added
+- [x] Verify all documentation links
 
 Done criteria:
 
-- [ ] Root README has a clear documentation entry point
-- [ ] Docs README, if added, exposes both language tracks
-- [ ] Document responsibilities do not overlap
+- [x] Root README has a clear documentation entry point
+- [x] Docs README, if added, exposes both language tracks
+- [x] Document responsibilities do not overlap
 
 ---
 
