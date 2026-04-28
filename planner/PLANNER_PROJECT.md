@@ -53,6 +53,7 @@
 - [ ] 모듈별 CLAUDE.md 생성 완료 (`src/[모듈명]/CLAUDE.md`)
 - [ ] BLUEPRINT.md 업데이트 완료
 - [ ] README.md 프로젝트 정보 기입 완료
+- [ ] `TODO.md` "다음에 할 것" 섹션에 구현 예정 작업 추가
 - [ ] "설계 완료" 선언
 
 → 완료 시 다음 단계: Codex로 Notion 동기화

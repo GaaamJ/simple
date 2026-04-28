@@ -36,11 +36,6 @@
     - [ ] Codex CLI가 없으면 Notion 동기화만 수동 처리 가능하다고 안내1
 
 
-- [ ] `docs/TASKS.md` 운영 규칙 추가
-  - [ ] 완료된 작업은 너무 길어지면 `docs/CHANGELOG.md` 또는 `docs/archive/`로 이동하는 규칙 추가
-  - [ ] 작업 항목은 현재 / 다음 / 완료 중심으로 유지
-  - [ ] 구현 중 발견사항은 바로 다음 작업 후보로 기록
-  - [ ] 오래된 todo와 실제 구조가 어긋나지 않도록 정기 점검 규칙 추가
 
 
 ---
@@ -50,6 +45,8 @@
 ---
 
 ## 완료
+
+- [x] `TODO.md` + `CHANGELOG.md` 도입 — `docs/TASKS.md` gitignore 처리, `/today` · implementer · Planner 참조 전면 교체
 
 - [x] 파일 구조 정리 (.claude/, docs/, templates/, src/)
 - [x] Agent Teams 설정 (.claude/Settings.json)
