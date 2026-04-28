@@ -35,19 +35,6 @@
     - [ ] 설계 완료 상태면 `/today` 또는 `/implementer`로 구현 진입 안내
     - [ ] Codex CLI가 없으면 Notion 동기화만 수동 처리 가능하다고 안내
 
-- [ ] `documenter` skill 삭제 또는 역할 변경
-  - [ ] Codex에서 slash command 미지원이므로 skill로 유지할지 재검토
-  - [ ] 삭제 시 `.claude/skills/documenter/` 제거
-  - [ ] `docs/SKILLS.md`에서 `/documenter` 항목 제거
-  - [ ] Notion 동기화용 지침은 `docs/USAGE_GUIDE.md` 또는 `docs/NOTION_SYNC.md`로 이동
-  - [ ] Codex용 복붙 프롬프트 형태로 보존
-
-- [ ] `docs/SKILLS.md` 정리
-  - [ ] 실제 사용 가능한 skill만 남기기
-  - [ ] `/planner`, `/documenter`처럼 현재 환경에서 직접 실행되지 않는 항목 제거 또는 별도 섹션으로 이동
-  - [ ] `/today`, `/todo`, `/implementer`의 사용 시점 정리
-  - [ ] 각 skill이 읽어야 하는 파일 순서 명시
-  - [ ] 각 skill이 수정 가능한 파일 범위 명시
 
 - [ ] `docs/TASKS.md` 운영 규칙 추가
   - [ ] 완료된 작업은 너무 길어지면 `docs/CHANGELOG.md` 또는 `docs/archive/`로 이동하는 규칙 추가
@@ -87,3 +74,4 @@
 - [x] `docs/INTERFACES.md` 검토 → BLUEPRINT.md 인수인계 테이블로 대체 결정
 - [x] `templates/` → `planner/` 리네이밍 (Planner 전용 폴더 명확화)
 - [x] Planner 세션 진입 방식 개선 (bootstrap 지침 / 세션 시작 시 읽을 파일 순서 추가)
+- [x] `documenter` skill 삭제 + `docs/SKILLS.md` 정리 (today / implementer만 유지)
