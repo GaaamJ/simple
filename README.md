@@ -41,6 +41,29 @@ A workflow environment for AI-assisted planning and implementation with Claude C
 | `/implementer [task]` | Begin a task | Reads minimal context, implements scoped work |
 | `/retire-module [name]` | Module is done | Archives module context and changelog |
 
+## Quickstart
+
+```bash
+# 1. Clone
+git clone https://github.com/GuReum/Simple.git
+cd Simple
+
+# 2. Install Claude Code
+npm install -g @anthropic-ai/claude-code
+
+# 3. Set up Planner
+#    Open Claude Desktop → Project → paste planner/PLANNER_PROJECT.md into Project Instructions
+#    Update the Project Path placeholder to your absolute project root
+
+# 4. Ask Planner to initialize your project
+#    "Initialize a new project for [your description]"
+#    Planner writes: CLAUDE.md, BLUEPRINT.md, src/[module]/CLAUDE.md
+
+# 5. Start working
+/today               # see what to work on
+/implementer [task]  # implement it
+```
+
 ## Typical Flow
 
 1. Fill in `CLAUDE.md`, `BLUEPRINT.md`, and `TODO.md` for your project.

@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Check YAML syntax
+        run: |
+          python3 - <<'EOF'
+          import yaml, sys, glob
+          files = glob.glob('**/*.yml', recursive=True) + glob.glob('**/*.yaml', recursive=True)
+          errors = []
+          for f in files:
+              try:
+                  yaml.safe_load(open(f).read())
+              except yaml.YAMLError as e:
+                  errors.append(f'{f}: {e}')
+          if errors:
+              print('YAML errors found:')
+              for e in errors:
+                  print(e)
+              sys.exit(1)
+          print(f'Checked {len(files)} YAML file(s) — OK')
+          EOF
+
+      - name: Check skill frontmatter
+        run: |
+          python3 - <<'EOF'
+          import yaml, sys, glob
+          errors = []
+          for f in glob.glob('.claude/skills/*/SKILL.md'):
+              content = open(f).read()
+              if not content.startswith('---'):
+                  errors.append(f'{f}: missing frontmatter')
+                  continue
+              parts = content.split('---', 2)
+              if len(parts) < 3:
+                  errors.append(f'{f}: malformed frontmatter')
+                  continue
+              try:
+                  fm = yaml.safe_load(parts[1])
+                  if not fm or not fm.get('name'):
+                      errors.append(f'{f}: missing name field')
+                  if not fm or not fm.get('description'):
+                      errors.append(f'{f}: missing description field')
+              except yaml.YAMLError as e:
+                  errors.append(f'{f}: {e}')
+          if errors:
+              for e in errors:
+                  print(e)
+              sys.exit(1)
+          print(f'Checked {len(list(glob.glob(".claude/skills/*/SKILL.md")))} skill(s) — OK')
+          EOF
