@@ -1,6 +1,6 @@
 # TODO
 
-> [Project Name] 현재 작업 목록
+> 사용자 프로젝트용 작업 큐 — [Project Name] 현재 작업 목록
 
 ---
 

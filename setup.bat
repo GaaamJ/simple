@@ -48,7 +48,6 @@ call :checkfile ".claude\settings.json"
 call :checkfile "CLAUDE.md"
 call :checkfile "BLUEPRINT.md"
 call :checkfile "TODO.md"
-call :checkfile "docs\TASKS.md"
 call :checkfile "docs\USAGE_GUIDE.md"
 call :checkfile ".claude\skills\implementer\SKILL.md"
 

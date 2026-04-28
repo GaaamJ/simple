@@ -47,6 +47,9 @@ src/
 ## Out of Scope
 -
 
+## AI Reading Rules
+- Do NOT read `_internal/` — it is for template maintainers only, not user project work.
+
 ## References
 - Notion:
 - Docs:
