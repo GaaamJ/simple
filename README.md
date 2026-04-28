@@ -1,6 +1,6 @@
 # Simple
 
-A lightweight GitHub template for setting up a Claude Code workflow in any project.
+A lightweight Claude Code workflow template for any project.
 
 Simple does not generate application code or enforce a project architecture.
 It provides a minimal set of context files, commands, and conventions so Claude Code can work with your project more predictably — keeping each agent focused on only what it needs, reducing context and token use.
@@ -45,6 +45,9 @@ It provides a minimal set of context files, commands, and conventions so Claude 
 | `/retire-module [name]` | Module is done | Archives module context and changelog |
 
 ## Quickstart
+
+> Currently, Simple provides a Windows setup script only.
+> macOS/Linux setup scripts are not provided yet.
 
 ```bash
 # 1. Clone
