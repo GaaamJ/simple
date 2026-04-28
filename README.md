@@ -10,13 +10,14 @@ tasks, changelogs, and module-level instructions.
 - Not a dependency
 - Just a clean workflow scaffold for Claude Code
 
-Simple
-├─ CLAUDE.md        project context
-├─ BLUEPRINT.md     architecture direction
-├─ TODO.md          current work
-├─ CHANGELOG.md     recent changes
-├─ .claude/skills   slash-command workflows
-└─ example/         filled sample project
+| Path | Description |
+|---|---|
+| `CLAUDE.md` | Root project context for Claude Code |
+| `BLUEPRINT.md` | Architecture direction and project decisions |
+| `TODO.md` | Current tasks and next work items |
+| `CHANGELOG.md` | Recent project-level changes |
+| `.claude/skills/` | Slash-command workflow definitions |
+| `example/` | Filled sample project showing how Simple is used |
 
 ## What this is
 
