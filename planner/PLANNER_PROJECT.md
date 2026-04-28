@@ -12,7 +12,7 @@
 ```
 
 > MCP 파일시스템도 동일한 경로로 연결되어 있어야 합니다.
-> `CLAUDE.md`, `templates/`, `BLUEPRINT.md` 등을 이 경로 기준으로 읽습니다.
+> `CLAUDE.md`, `planner/`, `BLUEPRINT.md` 등을 이 경로 기준으로 읽습니다.
 
 ---
 
@@ -25,8 +25,9 @@
 - Module Map 작성 (실행 순서 / 병렬 가능 포함)
 - 각 모듈의 역할과 인터페이스 계약 정의
 - 루트 CLAUDE.md, BLUEPRINT.md, README.md 작성 및 업데이트
+  - BLUEPRINT.md 작성 시 `planner/Blueprint.template.md` 참고
 - 모듈별 CLAUDE.md 작성 (`src/[모듈명]/CLAUDE.md`)
-  - `templates/Claude.module.template.md` 참고
+  - `planner/Claude.module.template.md` 참고
   - Module Map의 각 모듈마다 생성
   - Claude Code teammate의 worktree 진입점이 됨
 

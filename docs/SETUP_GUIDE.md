@@ -86,7 +86,7 @@ Windows:
 ```
 
 > `[username]`과 경로를 실제 값으로 변경.
-> **이 경로를 `templates/PLANNER_PROJECT.md`의 프로젝트 경로 항목과 동일하게 맞춰야 합니다.**
+> **이 경로를 `planner/PLANNER_PROJECT.md`의 프로젝트 경로 항목과 동일하게 맞춰야 합니다.**
 > 여러 경로 접근 필요 시 경로 추가 가능:
 > ```json
 > "args": ["-y", "@modelcontextprotocol/server-filesystem",
@@ -104,7 +104,32 @@ Windows:
 
 ---
 
-## 4. Codex Notion 연동
+## 4. Claude Desktop Planner 프로젝트 설정
+
+Planner 역할 전용 Claude Desktop 프로젝트를 생성합니다.
+
+### 프로젝트 생성
+
+```
+Claude Desktop → Projects → New Project
+```
+
+### Project Instructions 입력
+
+아래 내용을 붙여넣고 경로만 실제 값으로 교체합니다:
+
+```
+프로젝트 경로: C:\Users\[username]\[프로젝트 루트 경로]
+
+세션 시작 시 위 경로의 planner/PLANNER_PROJECT.md를 읽고 역할을 수행하세요.
+```
+
+> `planner/PLANNER_PROJECT.md`를 수정해도 Instructions는 바꿀 필요 없습니다.
+> MCP 파일시스템이 연결되어 있어야 파일을 읽을 수 있습니다.
+
+---
+
+## 5. Codex Notion 연동
 
 Codex가 Notion 페이지를 읽고 쓸 수 있게 설정.
 
@@ -138,7 +163,7 @@ codex
 
 ---
 
-## 5. Claude Code Agent Teams 활성화
+## 6. Claude Code Agent Teams 활성화
 
 `setup.bat` 실행 또는 수동으로:
 
@@ -158,7 +183,7 @@ setx CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS 1
 
 ---
 
-## 6. pipeline-template 설정
+## 7. pipeline-template 설정
 
 GitHub에서 pipeline-template repo:
 ```
@@ -177,6 +202,7 @@ Settings → General → "Template repository" 체크
 □ Git 설치
 □ Git GUI 설치 (선택사항)
 □ Claude Desktop 설치 + MCP 파일시스템 설정
+□ Claude Desktop Planner 프로젝트 생성 + Instructions 입력
 □ Claude Code 설치
 □ Codex CLI 설치 + Notion 연동
 □ Agent Teams 활성화

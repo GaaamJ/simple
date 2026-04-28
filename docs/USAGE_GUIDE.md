@@ -59,7 +59,11 @@ GitHub에서 pipeline-template repo 열고:
 
 ```
 Claude Desktop → Projects → New Project
-→ Instructions에 templates/PLANNER_PROJECT.md 내용 붙여넣기
+→ Instructions에 아래 입력 (경로만 실제 값으로 교체):
+
+프로젝트 경로: C:\Users\[username]\[프로젝트 루트 경로]
+세션 시작 시 위 경로의 planner/PLANNER_PROJECT.md를 읽고 역할을 수행하세요.
+
 → MCP 파일시스템 연결 (프로젝트 경로)
 ```
 
@@ -70,7 +74,7 @@ Claude Desktop → Projects → New Project
 Project 채팅에서:
 
 ```
-templates/CLAUDE.root.template.md 읽고,
+planner/CLAUDE.root.template.md 읽고,
 아래 프로젝트 개요를 바탕으로 CLAUDE.md, BLUEPRINT.md, 모듈별 CLAUDE.md, README.md를 작성해줘:
 [프로젝트 개요]
 ```
@@ -183,4 +187,4 @@ CLAUDE.md 최소 버전:
 claude
 ```
 
-> 나중에 구조가 필요해지면 `templates/` 참고해서 언제든 전환 가능.
+> 나중에 구조가 필요해지면 `planner/` 참고해서 언제든 전환 가능.
