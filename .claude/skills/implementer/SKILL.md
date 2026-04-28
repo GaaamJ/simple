@@ -1,125 +1,71 @@
 ---
-description: Claude Code(Team Lead + Teammate) 역할 경계 및 완료 조건 정의. 구현 범위와 에이전트 운영 방식을 명시합니다.
+description: Verify the implementation scope, choose the execution mode, and implement only the requested module or feature.
 ---
 
-## 역할
-Team Lead로서 인수인계 문서를 검증하고, 구현 방식을 확정한 뒤 구현을 실행한다.
-Planner(Claude Desktop)가 작성한 문서를 맹신하지 않는다.
+You act as Team Lead and, when needed, coordinate teammates. Keep context small and module-scoped.
 
-## 진입 조건
-- 루트 `CLAUDE.md` 존재
-- 구현할 기능 또는 모듈이 명시된 상태
+## Entry Conditions
+- Root `CLAUDE.md` exists.
+- The user named a feature, task, or module to implement.
 
----
+## Default Reading Scope
+Read only:
+1. `CLAUDE.md`
+2. `BLUEPRINT.md`
+3. `TODO.md`
+4. `src/[module]/CLAUDE.md` for the relevant module
 
-## 1단계 — 인수인계 문서 품질 검증
+Read `CHANGELOG.md` only when recent completed work affects the implementation.
+Read `docs/*.en.md` only when the requested work explicitly depends on human documentation.
+Read `.ko.md` only when the user asks for Korean documentation.
+Do not read `_internal/` during normal implementation.
 
-### 읽을 파일
-1. `TODO.md` — 현재 작업 큐 및 우선순위 확인
-2. `BLUEPRINT.md` — 실행 흐름, 모듈 배정, 모듈 간 인수인계 확인
-3. 루트 `CLAUDE.md` — 전체 맥락, Module Map 확인
-4. 구현 대상 모듈의 `src/[모듈명]/CLAUDE.md` — 구현 디테일 확인
+## Step 1 - Validate Scope
+Identify the target module from:
+1. `BLUEPRINT.md` module assignment
+2. `CLAUDE.md` Module Map
+3. the user's explicit request
 
-### 구현 대상 모듈 특정
-사용자가 기능명으로 진입한 경우(`/implementer A 기능`), 아래 순서로 해당 모듈을 특정한다:
-1. BLUEPRINT.md 모듈 배정표에서 일치하는 모듈 탐색
-2. 없으면 루트 CLAUDE.md Module Map의 역할(역할 컬럼) 기반으로 추론
-3. 추론 결과가 불명확하면 구현 시작 전 사용자에게 확인
+If the target is unclear, ask one concise clarification before editing.
 
-```
-"A 기능"이 [module-x]에 해당하는 것으로 파악했습니다.
-맞다면 진행하겠습니다. 다른 모듈이라면 알려주세요.
-```
+Validation checklist:
+- [ ] `BLUEPRINT.md` exists and has enough execution order information
+- [ ] Target module is identified
+- [ ] Relevant `src/[module]/CLAUDE.md` exists, or the absence is reported
+- [ ] Module interface contracts are clear enough to implement
 
-### 검증 항목
-- [ ] `BLUEPRINT.md`가 존재하는가
-- [ ] 실행 흐름 다이어그램이 작성되어 있는가
-- [ ] 모듈 배정표가 채워져 있는가 (선행 모듈, 병렬 그룹 포함)
-- [ ] 모듈 간 인수인계 데이터가 명시되어 있는가
-- [ ] 구현 대상 모듈의 `CLAUDE.md`가 존재하는가
-- [ ] 모듈 `CLAUDE.md`에 구현에 필요한 정보가 충분한가 (입출력, 역할, 주의사항)
-- [ ] BLUEPRINT.md 인수인계 테이블의 필드·타입이 모듈 `CLAUDE.md` Interface와 일치하는가
+If validation fails, explain the missing pieces and stop. Do not fill planning gaps by scanning every document.
 
-### 검증 후 처리
-- 문제 있으면: 구체적으로 무엇이 부족한지 명시 → "Planner 단계로 돌아가서 보완 필요" 안내 → 세션 종료
-- 문제 없으면: 검증 결과 요약 제시
+## Step 2 - Choose Execution Mode
+Use a single session unless `BLUEPRINT.md` clearly shows independent parallel modules.
+Use worktrees or teammates only for independent modules with disjoint write scopes.
 
-### 마지막 문장 (반드시 포함)
-```
-문서 검증이 완료되었습니다.
-다음은 [구현 대상] 기준으로 구현 방식을 검토합니다. 진행할까요?
-```
+Before implementation, present:
 
-→ 사용자 확인 후 2단계 진입
-
----
-
-## 2단계 — 구현 방식 검증
-
-### 검토 항목
-- 실행 순서 (BLUEPRINT.md 실행 흐름 기반)
-- 병렬 가능 여부 → 단일 세션 vs worktree 결정
-  - BLUEPRINT.md 병렬 그룹에 모듈 2개 이상: worktree 사용
-  - 아니면: 단일 세션
-- 기술적으로 막힐 수 있는 부분
-
-### 제시 형식
-```
-구현 계획:
-- 실행 순서: ...
-- 방식: 단일 세션 / worktree ([이유])
-- 예상 리스크: ...
+```markdown
+Implementation plan:
+- Target:
+- Files likely to change:
+- Execution mode:
+- Main risks:
 ```
 
-### 마지막 문장 (반드시 포함)
-```
-승인하시면 구현을 시작합니다.
-수정이 필요하면 말씀해 주세요.
-```
+## Step 3 - Implement
+- Edit only files related to the requested target.
+- Do not read or modify unrelated modules.
+- Follow existing project style and tests.
+- If new issues are found, add them to `TODO.md` under `Next` or `Blocked`.
+- After completing work, move completed TODO items to `CHANGELOG.md` with today's date.
 
-→ 사용자 승인 후 3단계 진입. 수정 요청 시 반영 후 재제시.
+## Guardrails
+- Do not modify `CLAUDE.md` unless the user asked to update project planning context.
+- Do not broaden scope because documentation is incomplete.
+- Do not read all of `docs/` or `_internal/`.
+- Do not read both English and Korean versions of the same document.
+- Stop and report if implementation would cross module boundaries not listed in the plan.
 
----
-
-## 3단계 — 구현
-
-### 단일 세션
-- 모듈 순서대로 해당 `CLAUDE.md` 읽고 구현
-
-### worktree
-- teammate spawn: 루트 `CLAUDE.md` + `BLUEPRINT.md` + 해당 모듈 `CLAUDE.md` 경로 전달
-- 각 teammate는 자기 모듈만 구현 후 결과 반환
-- Team Lead가 결과 통합 및 검토
-
-### 문서 갱신 규칙
-
-**구현 완료 시**
-- `TODO.md`에서 완료된 항목을 제거한다.
-- `CHANGELOG.md`에 오늘 날짜와 함께 완료 내용을 기록한다.
-
-**구현 중 문제점 / 개선 방향 발견 시**
-- `TODO.md` "다음에 할 것" 섹션에 즉시 추가한다.
-
-세션 종료 전 사용자에게 갱신 여부를 확인한다.
-
----
-
-## 하지 말 것
-- 1단계 문제 발견 시 임의로 문서 보완 후 진행 (Planner로 반드시 되돌릴 것)
-- 사용자 승인 없이 다음 단계 진행
-- CLAUDE.md 임의 수정
-- 모듈 범위 벗어난 작업
-
----
-
-## 완료 조건 (Teammate)
-- [ ] 담당 모듈 구현 완료
-- [ ] 인터페이스 계약 준수 확인
-- [ ] Team Lead에 결과 return
-
-## 완료 조건 (Team Lead)
-- [ ] 모든 teammate 작업 완료 확인
-- [ ] 모듈 간 통합 검토 완료
-- [ ] 최종 결과물 검토 및 커밋
-
-→ 완료 시 다음 에이전트: 없음 (최종 단계)
+## Done Criteria
+- [ ] Requested implementation completed
+- [ ] Related module contracts respected
+- [ ] Tests or validation run when available
+- [ ] `TODO.md` and `CHANGELOG.md` updated when task state changed

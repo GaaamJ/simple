@@ -1,9 +1,9 @@
 # Changelog
 
-> 완료된 작업의 날짜별 기록
+Keep the top of this file limited to recent changes. Archive old history under `_archive/` when it becomes noisy.
 
----
+## Recent Summary
+- No completed project changes yet.
 
-## YYYY-MM-DD
-
-- 작업 내용
+## 2026-04-28
+- Initialized changelog template.

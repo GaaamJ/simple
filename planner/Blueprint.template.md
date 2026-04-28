@@ -1,62 +1,37 @@
 # Blueprint
-<!-- 이 파일은 Planner(Claude Desktop)가 작성하는 실행 청사진입니다. -->
-<!-- CLAUDE.md가 무엇을 만드는지 정의한다면, BLUEPRINT.md는 어떻게 실행되는지를 정의합니다. -->
-<!-- Team Lead(Claude Code)가 구현 진입 시 가장 먼저 읽는 파일입니다. -->
 
-> 이 프로젝트의 실행 청사진.
-> CLAUDE.md가 무엇을 만드는지 정의한다면, BLUEPRINT.md는 어떻게 실행되는지를 정의한다.
-> Planner가 작성하고, Team Lead(Claude Code)가 구현 진입 시 가장 먼저 읽는다.
+This file is written by Planner and read by Team Lead before implementation. Keep it in English and focused on execution.
 
----
+## Execution Flow
+Use a small ASCII diagram showing order and parallel work.
 
-## 실행 흐름
-<!-- 모듈 간 실행 순서를 ASCII 다이어그램으로 표현합니다. -->
-<!-- 각 모듈 이름 옆에 담당 teammate를 괄호로 표시합니다. -->
-<!-- 화살표(↓) 아래에는 다음 모듈로 전달되는 output을 간략히 표시합니다. -->
-<!-- 병렬 실행 가능한 모듈은 같은 줄에 ──┐ / ──┘ 형태로 묶습니다. -->
-
-```
-[[모듈명]] ([teammate명])
-    ↓ output: { [필드명]: [타입] }
-[[모듈명]] ([teammate명]) ──┐  병렬
-[[모듈명]] ([teammate명]) ──┘
-    ↓
-[[모듈명]] ([teammate명])
+```text
+[module-a] (teammate-1)
+    -> output: { field: type }
+[module-b] (teammate-2) -- parallel group-1
+[module-c] (teammate-3) -- parallel group-1
+    -> [module-d] (teammate-4)
 ```
 
----
+## Module Assignment
+| Module | Owner | Prerequisites | Parallel Group |
+|---|---|---|---|
+| [module-name] | [teammate-name] | none | none |
+| [module-name] | [teammate-name] | [module-name] | group-1 |
 
-## 모듈 배정
-<!-- CLAUDE.md Module Map의 내용을 실행 관점으로 재정리합니다. -->
-<!-- 선행 모듈이 없으면 — 로 표시합니다. -->
-<!-- 병렬 그룹: 동시에 실행 가능한 모듈끼리 같은 그룹명(예: group-1)을 부여합니다. 없으면 — 으로 표시합니다. -->
+## Module Interfaces
+| Producer | Consumer | Data Contract |
+|---|---|---|
+| [module-name] | [module-name] | `{ field: type }` |
 
-| 모듈 | 담당 teammate | 선행 모듈 | 병렬 그룹 |
-|------|--------------|----------|----------|
-| [모듈명] | [teammate명] | — | — |
-| [모듈명] | [teammate명] | [선행 모듈명] | [그룹명] |
-| [모듈명] | [teammate명] | [선행 모듈명] | [그룹명] |
-| [모듈명] | [teammate명] | [선행 모듈명], [선행 모듈명] | — |
+## Implementation Rules
+- Keep structure details in `docs/ARCHITECTURE.en.md`.
+- Keep this file focused on execution order and interfaces.
+- Do not add long usage or setup instructions here.
+- If an interface is unknown, mark it as missing instead of guessing.
 
----
-
-## 모듈 간 인수인계
-<!-- 모듈 간 실제로 전달되는 데이터 필드와 타입을 기록합니다. -->
-<!-- 선행 모듈의 output이 수신 모듈의 input이 됩니다. -->
-<!-- 전달 데이터가 없는 경우 해당 행을 제거합니다. -->
-
-| 송신 모듈 | 수신 모듈 | 전달 데이터 |
-|----------|----------|-----------|
-| [모듈명] | [모듈명] | { [필드명]: [타입] } |
-| [모듈명] | [모듈명] | { [필드명]: [타입] } |
-
----
-
-## 완료 조건 (Team Lead)
-<!-- 구현이 끝난 후 Team Lead가 체크합니다. -->
-<!-- 프로젝트에 맞게 항목을 추가 / 수정할 수 있습니다. -->
-
-- [ ] 실행 흐름 검토 완료
-- [ ] 모든 teammate 작업 완료 확인
-- [ ] 모듈 간 인수인계 데이터 검증 완료
-- [ ] 최종 결과물 검토 및 커밋
+## Done Criteria
+- [ ] Execution flow reviewed
+- [ ] All teammate work completed
+- [ ] Module interface contracts verified
+- [ ] Final result reviewed and committed

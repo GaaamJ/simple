@@ -1,14 +1,14 @@
 # Project Context
-<!-- 이 파일은 Team Lead와 모든 teammate가 읽는 전체 컨텍스트입니다. -->
-<!-- 최대한 구체적으로 작성할수록 Claude Code의 작업 품질이 높아집니다. -->
+
+This is the root agent-facing context file. Keep it concise and in English.
 
 ## Overview
-[Project Name] — [한 줄 설명]
+[Project Name] - [one or two sentence summary]
 
 ## Goals
-- [ ] 목표 1
-- [ ] 목표 2
-- [ ] 목표 3
+- [ ] Goal 1
+- [ ] Goal 2
+- [ ] Goal 3
 
 ## Tech Stack
 - Language:
@@ -17,37 +17,33 @@
 - Platform:
 
 ## Module Map
-<!-- 모듈 간 의존성을 명확히 정의할수록 teammate 간 충돌이 줄어듭니다. -->
-<!-- 실행 순서: 숫자 (1, 2, 3...) / 병렬 가능: Y or N -->
-| 모듈 | 역할 | 의존 모듈 | 실행 순서 | 병렬 가능 | 담당 teammate |
-|------|------|-----------|-----------|-----------|---------------|
+| Module | Role | Depends On | Order | Parallel | Owner |
+|---|---|---|---:|---|---|
 | module-a | | none | 1 | N | |
 | module-b | | module-a | 2 | Y | |
 
 ## Interface Contracts
-<!-- 모듈 간 주고받는 데이터 형식 정의 -->
-<!-- 의존성 있는 모듈이 있을 경우 반드시 작성 -->
-- module-a → module-b:
+- module-a -> module-b
   - Input:
   - Output:
 
 ## Project Structure
-```
+```text
 src/
-├── module-a/
-│   └── CLAUDE.md
-└── module-b/
-    └── CLAUDE.md
+  module-a/
+    CLAUDE.md
+  module-b/
+    CLAUDE.md
 ```
 
 ## Current Status
-- 현재 단계:
-- 완료된 것:
-- 다음 할 일:
+- Now:
+- Done:
+- Next:
 
 ## Key Decisions
-| 결정 | 이유 |
-|------|------|
+| Decision | Reason |
+|---|---|
 | | |
 
 ## Constraints
@@ -56,6 +52,15 @@ src/
 ## Out of Scope
 -
 
+## AI Reading Rules
+- Do not read all of `docs/` by default.
+- Do not read `_internal/` during normal project work.
+- Do not read both English and Korean documentation for the same topic.
+- When documentation is needed, read only the relevant `.en.md` file.
+- Read `.ko.md` files only when the user explicitly asks for Korean documentation.
+
 ## References
-- Notion:
-- Docs:
+- Architecture: `docs/ARCHITECTURE.en.md`
+- Usage: `docs/USAGE_GUIDE.en.md`
+- Setup: `docs/SETUP_GUIDE.en.md`
+- Skills: `docs/SKILLS.en.md`

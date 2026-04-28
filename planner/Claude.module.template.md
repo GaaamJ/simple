@@ -1,44 +1,40 @@
 # [Module Name] Context
-<!-- 이 파일은 이 모듈 담당 teammate가 읽는 컨텍스트입니다. -->
-<!-- 상위 CLAUDE.md와 함께 읽힙니다. 중복 내용은 생략해도 됩니다. -->
+
+This file is the only module-specific context a teammate should need for this module. Keep it concise and in English.
 
 ## Role
-<!-- 이 모듈이 전체 프로젝트에서 담당하는 역할 -->
+[Describe what this module owns in the project.]
 
 ## Responsibilities
-- 책임 1
-- 책임 2
+- Responsibility 1
+- Responsibility 2
 
 ## Interface
-<!-- 다른 모듈과 주고받는 데이터 명세 -->
 ### Input
-- 받는 모듈:
-- 데이터 형식:
+- From:
+- Data:
 
 ### Output
-- 보내는 모듈:
-- 데이터 형식:
+- To:
+- Data:
 
 ## Dependencies
-<!-- 이 모듈이 의존하는 모듈 목록 -->
-- [ ] module-x (이유:)
+- [ ] module-x (reason:)
 
 ## Tech Stack
-<!-- 이 모듈에서만 사용하는 기술 (상위와 다를 경우만 작성) -->
--
+Only list module-specific technology that differs from the root context.
 
 ## File Structure
-```
+```text
 module-name/
-├── CLAUDE.md
-└── src/
+  CLAUDE.md
+  src/
 ```
 
 ## Current Status
-- 현재 단계:
-- 완료된 것:
-- 다음 할 일:
+- Now:
+- Done:
+- Next:
 
 ## Notes
-<!-- teammate에게 전달할 특이사항, 주의점 -->
 -

@@ -1,71 +1,44 @@
 ---
-description: TODO.md와 CHANGELOG.md를 읽고 오늘 할 일을 정리해주는 skill. 지금 할 것 / 다음에 할 것 / 완료 섹션을 구분 요약하고, 바로 시작 가능한 작업 1~3개와 각 작업별 읽어야 할 파일 목록을 안내한다.
+description: Brief today's work from the smallest useful context: TODO.md and CHANGELOG.md.
 ---
 
-너는 오늘의 작업 브리핑을 담당하는 어시스턴트다.
-아래 순서대로 정확히 실행해야 한다.
+You prepare a short work briefing. This skill is read-only and must not implement changes.
 
-## 1. TODO.md 읽기
+## Reading Scope
+Read only:
+1. `TODO.md`
+2. `CHANGELOG.md`
 
-`TODO.md` 파일을 읽어라.
-파일이 없으면 사용자에게 알리고 종료한다.
+Read `BLUEPRINT.md` only when a task's execution order or dependency is unclear.
 
-## 2. 섹션 구분 요약
+Do not read:
+- all of `docs/`
+- `_internal/`
+- both `.en.md` and `.ko.md` documentation for the same topic
+- implementation files unless the user asks for a specific task deep dive
 
-읽은 내용을 아래 세 섹션으로 구분해서 요약해라.
-각 섹션은 항목 수가 많으면 핵심 3~5개만 추려서 보여준다.
+## Output
+Summarize:
+- **Today**: active or highest-priority work
+- **Next**: upcoming work
+- **Blocked**: blocked work and blockers
+- **Recently Done**: recent entries from `CHANGELOG.md`
 
-- **지금 할 것**: 가장 우선순위가 높거나 현재 진행 중인 작업
-- **다음에 할 것**: 아직 시작하지 않은 예정 작업
-- **완료**: 이미 끝난 작업 (최근 완료 항목 위주로 요약, CHANGELOG.md에서 최근 날짜 기준)
+Then recommend 1-3 tasks that can start now. For each task include:
 
-## 3. 오늘 바로 시작 가능한 작업 추천
-
-"지금 할 것" 섹션과 "다음에 할 것" 섹션을 기준으로,
-**오늘 바로 시작 가능한 작업 1~3개**를 선별해서 추천한다.
-
-추천 기준:
-- 다른 작업에 대한 선행 의존성이 없거나 이미 충족된 것
-- 범위가 명확하고 단일 세션 내에 완료 가능한 것
-- 완료 시 다른 작업을 unblock할 수 있는 것
-
-각 추천 항목은 아래 형식으로 제시한다:
-
-```
-### [순번]. [작업 이름]
-- 왜 지금 하면 좋은가: ...
-- 예상 소요 시간: ...
-- 완료 기준: ...
+```markdown
+### [Task Name]
+- Why now:
+- Estimated scope:
+- Done when:
+- Files to read before starting:
 ```
 
-## 4. 각 추천 작업별 읽어야 할 파일 목록 안내
+Keep the "files to read" list minimal. Prefer `CLAUDE.md`, `TODO.md`, `BLUEPRINT.md`, and the relevant `src/[module]/CLAUDE.md` only when they are actually needed.
 
-각 추천 작업을 시작하기 전에 읽어야 할 파일 목록을 안내한다.
-
-형식 예시:
-```
-### [작업 이름] 시작 전 읽어야 할 파일
-- `CLAUDE.md` — 프로젝트 전체 맥락 확인
-- `src/[module]/CLAUDE.md` — 해당 모듈 구현 인수인계 문서
-- `TODO.md` — 현재 작업 큐 확인 (이미 읽음)
-```
-
-파일 목록은 작업 성격에 맞게 실제로 존재할 가능성이 높은 파일만 안내한다.
-불필요한 파일은 포함하지 않는다.
-
-## 5. 세션 종료 시 TODO.md / CHANGELOG.md 업데이트 권장
-
-브리핑 마지막에 아래 문구를 반드시 포함한다:
-
----
-> **세션 종료 전 `TODO.md`와 `CHANGELOG.md`를 업데이트해야 한다.**
-> - 완료한 항목은 `CHANGELOG.md`에 날짜와 함께 이동
-> - 진행 중인 항목은 `TODO.md` "지금 할 것" 섹션에 기록
-> - 새로 발견한 작업이나 개선 방향은 `TODO.md` "다음에 할 것"에 추가
----
-
-## 주의사항
-
-- `TODO.md` 외의 파일은 이 skill 실행 중에 수정하지 않는다.
-- 추천 작업은 사용자가 승인하기 전까지 실제 구현을 시작하지 않는다.
-- 작업 추천은 파일 내용 기반으로만 하고, 임의로 작업을 추가하거나 삭제하지 않는다.
+## Guardrails
+- Do not modify files.
+- Do not start implementation.
+- Do not invent tasks that are not supported by `TODO.md` or `CHANGELOG.md`.
+- If documentation is missing, say what is missing; do not scan the whole repository.
+- End with a reminder to update `TODO.md` and `CHANGELOG.md` after the session.

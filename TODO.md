@@ -1,21 +1,12 @@
 # TODO
 
-> 사용자 프로젝트용 작업 큐 — [Project Name] 현재 작업 목록
+Keep this file focused on current work. Move completed historical items to `CHANGELOG.md`.
 
----
+## Today
+- [ ] Replace with the current highest-priority task.
 
-## 지금 할 것
+## Next
+- [ ] Replace with the next planned task.
 
-- [ ] 작업 항목
-
----
-
-## 다음에 할 것
-
-- [ ] 작업 항목
-
----
-
-## 완료
-
-완료된 항목은 CHANGELOG.md로 이동합니다.
+## Blocked
+- [ ] Replace with blocked work and the blocker.
