@@ -6,12 +6,6 @@
 
 ## 다음 세션에 할 것
 
-- [ ] `/today` 또는 `/todo` skill 추가
-  - [ ] 작업 시작 시 `docs/TASKS.md`를 먼저 읽도록 구성
-  - [ ] 현재 진행 중 / 다음 작업 / 완료 항목을 구분해서 요약하도록 구성
-  - [ ] 오늘 바로 가능한 작업 1~3개만 추천하도록 구성
-  - [ ] 각 작업별로 읽어야 할 파일 목록을 함께 안내하도록 구성
-  - [ ] 작업 종료 시 `docs/TASKS.md` 업데이트를 권장하도록 구성
 
 - [x] `/implementer` skill 수정
   - [x] 바로 Agent Teams를 생성하지 않도록 수정
@@ -35,12 +29,6 @@
   - [ ] Claude Desktop/Web, Claude Code, Codex의 역할 경계 명시
   - [ ] Planner / Implementer / Team Lead / Teammate의 책임 범위 명시
 
-- [ ] `docs/INTERFACES.md` 추가 검토
-  - [ ] 모듈 간 입출력 계약을 별도 문서로 둘지 결정
-  - [ ] 병렬 작업 시 모듈 간 필드명 / 데이터 구조 불일치 방지 목적 명시
-  - [ ] `CLAUDE.md` Module Map과의 관계 정리
-  - [ ] 인터페이스 변경 시 업데이트해야 할 문서 목록 명시
-  - [ ] 예시 interface contract 추가
 
 - [ ] `setup.bat`를 초기화 스크립트가 아니라 상태 점검 스크립트로 강화
   - [ ] Git 설치 여부 확인
@@ -105,3 +93,8 @@
 - [x] AGENTS.md 완료 조건 추가
 - [x] implementer skill 안전 지점 추가 (실행 계획 승인 후 teammate 생성)
 - [x] Planner 완료 조건에 모듈별 CLAUDE.md 생성 추가 (worktree 진입점)
+- [x] `/today` skill 추가 (TASKS.md 요약 / 작업 추천 / 파일 목록 안내)
+- [x] `/implementer` skill 수정 (3단계 흐름 / TASKS.md 연동 / 발견사항 역기록)
+- [x] `docs/INTERFACES.md` 검토 → BLUEPRINT.md 인수인계 테이블로 대체 결정
+- [x] `templates/` → `planner/` 리네이밍 (Planner 전용 폴더 명확화)
+- [x] Planner 세션 진입 방식 개선 (bootstrap 지침 / 세션 시작 시 읽을 파일 순서 추가)
