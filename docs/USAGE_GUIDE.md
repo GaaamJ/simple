@@ -7,22 +7,26 @@
 ## 파이프라인 구조
 
 ```
-Claude Desktop                GitHub
-CLAUDE.md 작성      →      버전 관리
-BLUEPRINT.md 작성                  ↓
-                             Codex
-                         Notion 동기화
-                                ↓
-                          Claude Code
-                       Agent Teams로 구현
+Claude Desktop
+  BLUEPRINT.md 작성 (실행 청사진)
+  CLAUDE.md 작성 (프로젝트 맥락)
+  모듈별 CLAUDE.md 작성 (구현 인수인계)
+          ↓
+        Git 커밋
+          ↓
+        Codex
+      Notion 동기화
+          ↓
+      Claude Code
+  /implementer → 문서 검증 → 구현 방식 확정 → 구현
 ```
 
-| 도구           | 역할                                        |
-| -------------- | ------------------------------------------- |
-| Claude Desktop | CLAUDE.md / BLUEPRINT.md 작성 및 설계          |
-| Git            | 전체 버전 관리                              |
-| Codex          | CLAUDE.md → Notion 자동 동기화              |
-| Claude Code    | Agent Teams 기반 모듈별 구현                |
+| 도구           | 역할                                                    |
+| -------------- | ------------------------------------------------------- |
+| Claude Desktop | BLUEPRINT.md / CLAUDE.md / 모듈별 CLAUDE.md 작성       |
+| Git            | 전체 버전 관리                                          |
+| Codex          | CLAUDE.md → Notion 자동 동기화                          |
+| Claude Code    | 문서 검증 → 구현 방식 확정 → worktree 기반 구현         |
 
 ---
 
@@ -67,15 +71,18 @@ Project 채팅에서:
 
 ```
 templates/CLAUDE.root.template.md 읽고,
-아래 프로젝트 개요를 바탕으로 CLAUDE.md, BLUEPRINT.md, README.md를 작성해줘:
+아래 프로젝트 개요를 바탕으로 CLAUDE.md, BLUEPRINT.md, 모듈별 CLAUDE.md, README.md를 작성해줘:
 [프로젝트 개요]
 ```
 
-**Module Map 반드시 작성:**
+**Planner가 작성해야 할 파일:**
 
-```markdown
-| 모듈 | 역할 | 의존 모듈 | 실행 순서 | 병렬 가능 | 담당 teammate |
-```
+| 파일 | 내용 |
+|---|---|
+| `CLAUDE.md` | 전체 맥락, Module Map, Tech Stack |
+| `BLUEPRINT.md` | 실행 흐름, 모듈 배정, 모듈 간 인수인계 데이터 |
+| `src/[모듈명]/CLAUDE.md` | 모듈별 구현 디테일 (Role, Interface, Notes) |
+| `README.md` | 프로젝트 소개 |
 
 ### STEP 4 — Git 커밋
 

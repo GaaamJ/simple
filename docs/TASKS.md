@@ -30,7 +30,7 @@
     - [ ] `CLAUDE.md`: 프로젝트 전체 맥락 정본
     - [ ] `docs/TASKS.md`: 현재 작업 큐 정본
     - [ ] `src/[module]/CLAUDE.md`: 모듈별 구현 인수인계 정본
-    - [ ] `AGENTS.md`: 역할 / 완료 조건
+    - [ ] `BLUEPRINT.md`: 실행 흐름 / 모듈 배정 / 인수인계 청사진
     - [ ] `docs/USAGE_GUIDE.md`: 사람이 읽는 운영법
   - [ ] Claude Desktop/Web, Claude Code, Codex의 역할 경계 명시
   - [ ] Planner / Implementer / Team Lead / Teammate의 책임 범위 명시
@@ -48,7 +48,7 @@
   - [ ] Codex CLI 설치 여부 확인
   - [ ] `.claude/settings.json` 존재 여부 확인
   - [ ] `CLAUDE.md` 존재 여부 확인
-  - [ ] `AGENTS.md` 존재 여부 확인
+  - [ ] `BLUEPRINT.md` 존재 여부 확인
   - [ ] `docs/TASKS.md` 존재 여부 확인
   - [ ] `docs/USAGE_GUIDE.md` 존재 여부 확인
   - [ ] `.claude/skills/implementer/SKILL.md` 존재 여부 확인
