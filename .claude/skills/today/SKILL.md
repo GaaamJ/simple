@@ -1,4 +1,5 @@
 ---
+name: today
 description: Brief today's work from the smallest useful context: TODO.md and CHANGELOG.md.
 ---
 

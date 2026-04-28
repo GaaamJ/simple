@@ -1,4 +1,5 @@
 ---
+name: retire-module
 description: Safely retire a module: check dependencies, update workflow files, delete code, and archive module context.
 ---
 
