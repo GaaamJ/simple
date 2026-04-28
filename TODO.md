@@ -1,5 +1,7 @@
 # TODO
 
+<!-- Active Work Queue -->
+
 현재 작업에 집중. 완료된 항목은 `CHANGELOG.md`로 이동. 전략·결정 항목은 `BLUEPRINT.md`로.
 
 ---
@@ -10,18 +12,18 @@
 
 ## 루트 워크플로우 문서
 
-- [ ] 루트 문서에서 placeholder/기본값 제거하기
-- [ ] `[Project Name]`, `Goal 1`, `module-a`, `module-b` 등 placeholder 제거 또는 교체하기
-- [ ] `CLAUDE.md`를 이 저장소의 실제 루트 컨텍스트로 재작성하기
-- [ ] `BLUEPRINT.md`를 실제 실행 청사진으로 재작성하기
-- [ ] `TODO.md`를 활성 작업 대기열로 재작성하기
-- [ ] `CHANGELOG.md`를 현재 워크스페이스/프로젝트 이력으로 재작성하기
-- [ ] 루트 워크플로우 문서에 상태 레이블 추가하기:
-  - [ ] `CLAUDE.md`: Active Root Context
-  - [ ] `BLUEPRINT.md`: Active Execution Blueprint
-  - [ ] `TODO.md`: Active Work Queue
-  - [ ] `CHANGELOG.md`: Active History
-- [ ] `src/README.md` 추가하기 — `src/`를 언제 사용하고 언제 비워도 되는지 설명
+- [x] 루트 문서에서 placeholder/기본값 제거하기
+- [x] `[Project Name]`, `Goal 1`, `module-a`, `module-b` 등 placeholder 제거 또는 교체하기
+- [x] `CLAUDE.md`를 이 저장소의 실제 루트 컨텍스트로 재작성하기
+- [x] `BLUEPRINT.md`를 실제 실행 청사진으로 재작성하기
+- [x] `TODO.md`를 활성 작업 대기열로 재작성하기
+- [x] `CHANGELOG.md`를 현재 워크스페이스/프로젝트 이력으로 재작성하기
+- [x] 루트 워크플로우 문서에 상태 레이블 추가하기:
+  - [x] `CLAUDE.md`: Active Root Context
+  - [x] `BLUEPRINT.md`: Active Execution Blueprint
+  - [x] `TODO.md`: Active Work Queue
+  - [x] `CHANGELOG.md`: Active History
+- [x] `src/README.md` 추가하기 — `src/`를 언제 사용하고 언제 비워도 되는지 설명
 
 ## 예시 프로젝트
 

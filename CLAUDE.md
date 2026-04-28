@@ -1,5 +1,7 @@
 # Project Context
 
+<!-- Active Root Context -->
+
 This is the primary agent-facing context file. Keep it concise and in English.
 
 ## Overview
