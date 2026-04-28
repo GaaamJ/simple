@@ -100,10 +100,15 @@ CLAUDE.md를 읽고 아래 구조로 Notion 페이지를 작성해줘:
 ### STEP 6 — Claude Code에서 구현
 
 ```
-/implementer
-
-CLAUDE.md와 AGENTS.md 읽고 구현 시작해줘.
+/implementer [구현할 기능 또는 모듈명]
 ```
+
+3단계로 진행됩니다:
+1. 인수인계 문서 품질 검증 → 사용자 확인
+2. 구현 방식 검토 (순서, worktree 여부, 리스크) → 사용자 승인
+3. 구현 실행
+
+문서가 불완전하면 1단계에서 Planner로 되돌려집니다.
 
 ---
 
@@ -112,39 +117,11 @@ CLAUDE.md와 AGENTS.md 읽고 구현 시작해줘.
 ### 시작 전
 
 ```
-1. CLAUDE.md 최신 상태 확인
-2. 오늘 할 작업 범위 결정
-3. 단일 세션 vs Agent Teams 판단
+1. /today 로 오늘 할 작업 확인
+2. /implementer [기능명] 으로 구현 진입
 ```
 
-### 단일 세션 vs Agent Teams
-
-**단일 세션** (토큰 절약):
-- 한 모듈 안에서 끝나는 작업
-- 간단한 버그 수정 / 리팩토링
-- 파일 1~2개 수정
-
-**Agent Teams**:
-- 여러 모듈 동시 작업
-- 병렬 처리 가능한 작업이 3개 이상
-- 모듈 간 인터페이스를 함께 설계할 때
-
-### Agent Teams 효율적으로 쓰기
-
-- 작업 전 CLAUDE.md 반드시 최신화
-- Module Map에서 담당 모듈 경계 명확히 구분
-- Interface Contract 먼저 확정 후 작업 시작
-- 의존성 있는 작업은 순서 지정 (`module-a 완료 후 → module-b 시작`)
-
-**Team Lead 프롬프트 예시:**
-```
-# 좋은 예
-module-a는 유저 입력 처리, module-b는 렌더링 담당.
-각자 CLAUDE.md 읽고 독립적으로 구현 후 인터페이스만 맞춰줘.
-
-# 나쁜 예
-게임 만들어줘.
-```
+단일 세션 vs worktree 판단은 `/implementer` 2단계에서 Module Map 기반으로 자동 결정됩니다.
 
 ### 토큰 절약 팁
 

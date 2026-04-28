@@ -1,17 +1,20 @@
 # Agent Roles
 
 ## Team Lead — Claude Code (Orchestrator)
-**역할:** 전체 작업 조율 및 통합
+**역할:** 인수인계 문서 검증 → 구현 방식 확정 → 구현 실행
 **담당:**
-- CLAUDE.md 기반으로 작업 분해
+- 루트 CLAUDE.md + 모듈별 CLAUDE.md 품질 검증
+- 실행 순서 / 병렬 여부 판단 (Module Map 기반)
+- 단일 세션 vs worktree 결정
 - teammate 생성 및 태스크 할당
-- 모듈 간 의존성 조율
 - 결과 통합 및 검토
 
 **실행:**
-> VSCode에서 프로젝트 폴더를 열고 Claude Code 채팅창에서 바로 요청.
+> `/implementer [구현할 기능]` — 3단계로 진행, 각 단계마다 사용자 확인
 
 ## 완료 조건
+- [ ] 인수인계 문서 품질 검증 완료
+- [ ] 구현 방식 사용자 승인 완료
 - [ ] 모든 teammate 작업 완료 확인
 - [ ] 모듈 간 통합 검토 완료
 - [ ] 최종 결과물 검토 및 커밋
