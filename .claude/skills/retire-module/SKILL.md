@@ -1,6 +1,6 @@
 ---
 name: retire-module
-description: Safely retire a module: check dependencies, update workflow files, delete code, and archive module context.
+description: "Safely retire a module: check dependencies, update workflow files, delete code, and archive module context."
 ---
 
 You act as Team Lead retiring a module. The goal is to leave no broken references in the project or workflow.

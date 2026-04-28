@@ -1,6 +1,6 @@
 ---
 name: today
-description: Brief today's work from the smallest useful context: TODO.md and CHANGELOG.md.
+description: "Brief today's work from the smallest useful context: TODO.md and CHANGELOG.md."
 ---
 
 You prepare a short work briefing. This skill is read-only and must not implement changes.
