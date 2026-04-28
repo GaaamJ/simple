@@ -1,39 +1,58 @@
-# AI Pipeline Template
+# AI Workflow Environment
 
-This repository is a lightweight workflow template for AI-assisted planning and implementation. Its main goal is to reduce context and token use by making each agent read only the files needed for the current task.
+A workflow environment for AI-assisted planning and implementation with Claude Code. Its core goal is to reduce context and token use by making each agent read only the files needed for the current task.
+
+## What this is
+
+- A structured workflow environment — not a code generator or boilerplate
+- A set of conventions that let Claude Code agents stay focused and minimal
+- A starting point for modular AI-assisted projects: each module gets its own context, changelog, and owner
+- A collection of Claude Code skills (`/today`, `/implementer`, `/retire-module`) that enforce the workflow
+
+## What this is not
+
+- A project template that generates application code
+- A framework or library to install as a dependency
+- A replacement for your own project structure — `src/` is yours to organize
 
 ## Core Policy
+
 - Agent-facing files are written in English.
 - Human-facing docs are split into `.en.md` canonical files and `.ko.md` Korean translations.
-- AI agents should read English docs only when needed.
-- AI agents should read Korean docs only when the user explicitly asks for Korean documentation.
-- `_internal/` is for template maintenance, not normal project work.
+- AI agents read English docs only when needed; Korean docs only when explicitly asked.
+- `_internal/` is for workflow environment maintenance, not normal project work.
 
 ## Main Files
+
 | File | Purpose |
 |---|---|
-| `CLAUDE.md` | compact project context and AI reading rules |
-| `BLUEPRINT.md` | execution order, module ownership, interface contracts |
-| `TODO.md` | current work only: Today, Next, Blocked |
-| `CHANGELOG.md` | master changelog: project-level changes + Module Summaries |
-| `src/[module]/CHANGELOG.md` | module-specific completed work history |
-| `.claude/skills/today/SKILL.md` | `/today` reading and briefing rules |
-| `.claude/skills/implementer/SKILL.md` | `/implementer` scope and implementation rules |
+| `CLAUDE.md` | Root context: project overview, module map, AI reading rules |
+| `BLUEPRINT.md` | Execution order, module ownership, interface contracts |
+| `TODO.md` | Active work queue |
+| `CHANGELOG.md` | Master changelog: project-level changes + Module Summaries |
+| `src/[module]/CLAUDE.md` | Module-specific context |
+| `src/[module]/CHANGELOG.md` | Module-specific completed work history |
+
+## Skills
+
+| Skill | Trigger | Purpose |
+|---|---|---|
+| `/today` | Start of session | Reads TODO + CHANGELOG, recommends next task |
+| `/implementer [task]` | Begin a task | Reads minimal context, implements scoped work |
+| `/retire-module [name]` | Module is done | Archives module context and changelog |
+
+## Typical Flow
+
+1. Fill in `CLAUDE.md`, `BLUEPRINT.md`, and `TODO.md` for your project.
+2. `/today` reads the work queue and recommends a next task.
+3. `/implementer [task]` reads only what it needs and implements the task.
+4. Completed work moves to `src/[module]/CHANGELOG.md`; cross-module changes go to root `CHANGELOG.md`.
 
 ## Documentation
+
 Start with `docs/README.md`.
 
 - Architecture: `docs/ARCHITECTURE.en.md` / `docs/ARCHITECTURE.ko.md`
 - Usage: `docs/USAGE_GUIDE.en.md` / `docs/USAGE_GUIDE.ko.md`
 - Setup: `docs/SETUP_GUIDE.en.md` / `docs/SETUP_GUIDE.ko.md`
 - Skills: `docs/SKILLS.en.md` / `docs/SKILLS.ko.md`
-
-English docs are the source of truth. Korean docs are human-facing translations.
-
-## Typical Flow
-1. Planner writes `CLAUDE.md`, `BLUEPRINT.md`, module `CLAUDE.md` files, and initial `TODO.md`.
-2. `/today` reads `TODO.md` and `CHANGELOG.md` to recommend a small next task.
-3. `/implementer [task]` reads only the root context, blueprint, TODO, and relevant module context.
-4. Completed module work moves to `src/[module]/CHANGELOG.md`; cross-module changes go to root `CHANGELOG.md`.
-
-See `docs/README.md` for all documentation entry points.

@@ -17,3 +17,4 @@
 | 파일 | 설명 |
 |------|------|
 | `TEMPLATE_TASKS.md` | 템플릿 제작 및 개선을 위한 작업 목록 |
+| `TEMPLATE_CHANGELOG.md` | 템플릿 자체의 변경 이력 |
