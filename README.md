@@ -10,6 +10,14 @@ tasks, changelogs, and module-level instructions.
 - Not a dependency
 - Just a clean workflow scaffold for Claude Code
 
+Simple
+├─ CLAUDE.md        project context
+├─ BLUEPRINT.md     architecture direction
+├─ TODO.md          current work
+├─ CHANGELOG.md     recent changes
+├─ .claude/skills   slash-command workflows
+└─ example/         filled sample project
+
 ## What this is
 
 - A structured workflow environment — not a code generator or boilerplate
