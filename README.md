@@ -1,6 +1,9 @@
-# AI Workflow Environment
+# Simple
 
-A workflow environment for AI-assisted planning and implementation with Claude Code. Its core goal is to reduce context and token use by making each agent read only the files needed for the current task.
+A lightweight GitHub template for setting up a Claude Code workflow in any project.
+
+Simple does not generate application code or enforce a project architecture.
+It provides a minimal set of context files, commands, and conventions so Claude Code can work with your project more predictably — keeping each agent focused on only what it needs, reducing context and token use.
 
 ## What this is
 
