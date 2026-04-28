@@ -9,7 +9,7 @@
 ```
 Claude Desktop                GitHub
 CLAUDE.md 작성      →      버전 관리
-AGENTS.md 작성                  ↓
+BLUEPRINT.md 작성                  ↓
                              Codex
                          Notion 동기화
                                 ↓
@@ -19,7 +19,7 @@ AGENTS.md 작성                  ↓
 
 | 도구           | 역할                                        |
 | -------------- | ------------------------------------------- |
-| Claude Desktop | CLAUDE.md / AGENTS.md 작성 및 설계          |
+| Claude Desktop | CLAUDE.md / BLUEPRINT.md 작성 및 설계          |
 | Git            | 전체 버전 관리                              |
 | Codex          | CLAUDE.md → Notion 자동 동기화              |
 | Claude Code    | Agent Teams 기반 모듈별 구현                |
@@ -33,7 +33,7 @@ AGENTS.md 작성                  ↓
 ```
 □ STEP 1 — pipeline-template 클론
 □ STEP 2 — setup.bat 실행
-□ STEP 3 — Claude Desktop으로 CLAUDE.md / AGENTS.md / README.md 작성
+□ STEP 3 — Claude Desktop으로 CLAUDE.md / BLUEPRINT.md / README.md 작성
 □ STEP 4 — Git 커밋
 □ STEP 5 — Codex로 Notion 동기화
 □ STEP 6 — Claude Code에서 구현 시작
@@ -67,7 +67,7 @@ Project 채팅에서:
 
 ```
 templates/CLAUDE.root.template.md 읽고,
-아래 프로젝트 개요를 바탕으로 CLAUDE.md, AGENTS.md, README.md를 작성해줘:
+아래 프로젝트 개요를 바탕으로 CLAUDE.md, BLUEPRINT.md, README.md를 작성해줘:
 [프로젝트 개요]
 ```
 
