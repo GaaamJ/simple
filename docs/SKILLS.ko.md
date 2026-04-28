@@ -24,7 +24,10 @@
 - `BLUEPRINT.md`
 - `TODO.md`
 - 관련 `src/[module]/CLAUDE.md`
-- 최근 완료 작업이 필요할 때만 `CHANGELOG.md`
+- `src/[module]/CHANGELOG.md` — 모듈 작업 시작 전 항상
+- 루트 `CHANGELOG.md` — 크로스모듈 또는 프로젝트 수준 컨텍스트가 필요할 때만
+
+작업 완료 후 `src/[module]/CHANGELOG.md`에 기록하고, 루트 `CHANGELOG.md`의 Module Summaries 항목을 동기화합니다.
 
 하지 않는 일:
 - 관련 없는 모듈 읽기

@@ -31,6 +31,7 @@ You are Planner. You design the project structure and write planning documents. 
   - `README.md`
   - `TODO.md`
   - `src/[module]/CLAUDE.md`
+  - `src/[module]/CHANGELOG.md` (empty stub, created alongside each module `CLAUDE.md`)
 - Use `planner/Claude.root.template.md` for root context.
 - Use `planner/Blueprint.template.md` for execution planning.
 - Use `planner/Claude.module.template.md` for module context.
@@ -47,7 +48,7 @@ If the user asks for implementation, stop and say that planning is complete and 
 ## Done Criteria
 - [ ] Root `CLAUDE.md` updated with Module Map and AI Reading Rules
 - [ ] `BLUEPRINT.md` updated with execution flow and interfaces
-- [ ] Module `CLAUDE.md` files created for each module
+- [ ] Module `CLAUDE.md` and `CHANGELOG.md` stubs created for each module
 - [ ] `TODO.md` contains only Today, Next, and Blocked
 - [ ] README links to canonical `.en.md` docs
 - [ ] User has been told planning is complete

@@ -14,8 +14,10 @@ Read only:
 2. `BLUEPRINT.md`
 3. `TODO.md`
 4. `src/[module]/CLAUDE.md` for the relevant module
+5. `src/[module]/CHANGELOG.md` — always, before starting module work.
+   Reason: the file is module-scoped and stays small. Skipping it risks duplicating completed work or missing partial implementations.
 
-Read `CHANGELOG.md` only when recent completed work affects the implementation.
+Read root `CHANGELOG.md` only for cross-module or project-level context.
 Read `docs/*.en.md` only when the requested work explicitly depends on human documentation.
 Read `.ko.md` only when the user asks for Korean documentation.
 Do not read `_internal/` during normal implementation.
@@ -55,7 +57,11 @@ Implementation plan:
 - Do not read or modify unrelated modules.
 - Follow existing project style and tests.
 - If new issues are found, add them to `TODO.md` under `Next` or `Blocked`.
-- After completing work, move completed TODO items to `CHANGELOG.md` with today's date.
+- After completing work, record completed items in `src/[module]/CHANGELOG.md` with today's date.
+- Then update the module's entry under the **Module Summaries** section in root `CHANGELOG.md`. Keep only the last 1–2 lines for that module.
+- If the module has no entry yet in Module Summaries, add a new subsection (`### [module-name]`).
+- Use dated sections in root `CHANGELOG.md` only for cross-module or project-level changes.
+- After writing to `src/[module]/CHANGELOG.md`, count its dated sections. If over 15, suggest archiving entries older than 30 days to `_archive/[module]/CHANGELOG_[YYYY-MM].md`.
 
 ## Guardrails
 - Do not modify `CLAUDE.md` unless the user asked to update project planning context.
@@ -68,4 +74,7 @@ Implementation plan:
 - [ ] Requested implementation completed
 - [ ] Related module contracts respected
 - [ ] Tests or validation run when available
-- [ ] `TODO.md` and `CHANGELOG.md` updated when task state changed
+- [ ] `src/[module]/CHANGELOG.md` updated with completed work
+- [ ] Root `CHANGELOG.md` Module Summaries updated with last 1–2 entries for the module
+- [ ] Cross-module or project-level changes recorded in root `CHANGELOG.md` dated section if applicable
+- [ ] `TODO.md` updated when task state changed

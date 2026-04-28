@@ -38,4 +38,6 @@ This file defines how the project should be implemented. `CLAUDE.md` explains wh
 - [ ] Execution flow reviewed
 - [ ] All teammate work completed
 - [ ] Module interface contracts verified
+- [ ] Each module's completed work recorded in `src/[module]/CHANGELOG.md`
+- [ ] Root `CHANGELOG.md` Module Summaries updated for each module (last 1–2 entries)
 - [ ] Final result reviewed and committed

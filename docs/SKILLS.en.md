@@ -24,7 +24,10 @@ Reads:
 - `BLUEPRINT.md`
 - `TODO.md`
 - relevant `src/[module]/CLAUDE.md`
-- `CHANGELOG.md` only when recent completed work matters
+- `src/[module]/CHANGELOG.md` always, before starting module work
+- root `CHANGELOG.md` only for cross-module or project-level context
+
+After completing work, updates `src/[module]/CHANGELOG.md` and syncs the Module Summaries entry in root `CHANGELOG.md`.
 
 Does not:
 - read unrelated modules

@@ -36,6 +36,8 @@ Use this template to keep planning, implementation, and status tracking separate
 
 ## Session End
 Before ending an implementation session:
-1. Move completed current tasks from `TODO.md` to `CHANGELOG.md`.
-2. Add newly discovered work to `TODO.md` under `Next` or `Blocked`.
-3. Commit when the work is stable.
+1. Record completed module work in `src/[module]/CHANGELOG.md`.
+2. Update the module's entry in the **Module Summaries** section of root `CHANGELOG.md` (keep last 1–2 lines). Add a new subsection if the module is new.
+3. Record any cross-module or project-level changes as a dated section in root `CHANGELOG.md`.
+4. Remove completed tasks from `TODO.md`; add newly discovered work under `Next` or `Blocked`.
+5. Commit when the work is stable.

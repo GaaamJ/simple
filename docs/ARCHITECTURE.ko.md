@@ -9,6 +9,7 @@
 ```text
 Planner
   -> CLAUDE.md, BLUEPRINT.md, 모듈별 CLAUDE.md 작성
+  -> 각 모듈 CLAUDE.md와 함께 src/[module]/CHANGELOG.md 스텁 생성
   -> TODO.md에 예정 작업 기록
 
 Team Lead
@@ -22,7 +23,10 @@ Teammate
 
 Team Lead
   -> 통합 검증
-  -> TODO.md와 CHANGELOG.md 갱신
+  -> TODO.md 갱신
+  -> 모듈 완료 내용을 src/[module]/CHANGELOG.md에 기록
+  -> 루트 CHANGELOG.md의 Module Summaries 갱신 (모듈별 최신 1–2항목 유지)
+  -> 크로스모듈 또는 프로젝트 수준 변경은 루트 CHANGELOG.md에 기록
 ```
 
 ## 역할 경계
@@ -39,7 +43,8 @@ Team Lead
 | `BLUEPRINT.md` | 실행 순서, 모듈 담당, 인터페이스 |
 | `src/[module]/CLAUDE.md` | 모듈별 구현 계약 |
 | `TODO.md` | 현재 작업만 기록: Today, Next, Blocked |
-| `CHANGELOG.md` | 완료된 작업 기록 |
+| `CHANGELOG.md` | 마스터 changelog: 프로젝트 수준 변경 + Module Summaries (모듈별 최신 1–2항목) |
+| `src/[module]/CHANGELOG.md` | 모듈별 완료 작업 전체 기록 |
 
 ## 문서 분리
 - 구조 설명은 이 문서에 둡니다.

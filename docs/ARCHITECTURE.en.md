@@ -9,6 +9,7 @@ This template is an AI workflow template, not an application code template. It d
 ```text
 Planner
   -> writes CLAUDE.md, BLUEPRINT.md, and module CLAUDE.md files
+  -> creates src/[module]/CHANGELOG.md stub alongside each module CLAUDE.md
   -> records intended work in TODO.md
 
 Team Lead
@@ -22,7 +23,10 @@ Teammate
 
 Team Lead
   -> validates integration
-  -> updates TODO.md and CHANGELOG.md
+  -> updates TODO.md
+  -> records module-level completion in src/[module]/CHANGELOG.md
+  -> updates Module Summaries in root CHANGELOG.md (last 1–2 entries per module)
+  -> records cross-module or project-level changes in root CHANGELOG.md
 ```
 
 ## Role Boundaries
@@ -39,7 +43,8 @@ Team Lead
 | `BLUEPRINT.md` | execution order, module ownership, interfaces |
 | `src/[module]/CLAUDE.md` | module-specific implementation contract |
 | `TODO.md` | current work only: Today, Next, Blocked |
-| `CHANGELOG.md` | completed work history |
+| `CHANGELOG.md` | master changelog: project-level changes + Module Summaries (last 1–2 entries per module) |
+| `src/[module]/CHANGELOG.md` | full module-specific completed work history |
 
 ## Documentation Split
 - Architecture details live here.

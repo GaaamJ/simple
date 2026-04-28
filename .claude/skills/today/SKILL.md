@@ -36,9 +36,18 @@ Then recommend 1-3 tasks that can start now. For each task include:
 
 Keep the "files to read" list minimal. Prefer `CLAUDE.md`, `TODO.md`, `BLUEPRINT.md`, and the relevant `src/[module]/CLAUDE.md` only when they are actually needed.
 
+## Archive Trigger
+After reading `CHANGELOG.md`, count the number of dated sections (lines starting with `## 20`).
+If the count exceeds 15, suggest archiving entries older than 30 days:
+- Move them to `_archive/CHANGELOG_[YYYY-MM].md`
+- Keep only the last 15 dated sections in `CHANGELOG.md`
+- Do not archive automatically; prompt the user to confirm first.
+
+Note: the same 15-section rule applies to `src/[module]/CHANGELOG.md` files, but `/implementer` checks those — not `/today`.
+
 ## Guardrails
 - Do not modify files.
 - Do not start implementation.
 - Do not invent tasks that are not supported by `TODO.md` or `CHANGELOG.md`.
 - If documentation is missing, say what is missing; do not scan the whole repository.
-- End with a reminder to update `TODO.md` and `CHANGELOG.md` after the session.
+- End with a reminder: record module work in `src/[module]/CHANGELOG.md`; record project-level changes in root `CHANGELOG.md`; update `TODO.md` after the session.
