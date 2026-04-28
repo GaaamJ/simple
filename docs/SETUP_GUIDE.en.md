@@ -2,6 +2,8 @@
 
 > Canonical document. Korean translation: `docs/SETUP_GUIDE.ko.md`.
 
+This guide covers initializing a workflow environment. Complete the tool installation steps once per machine. Complete the project configuration steps once per new workflow environment.
+
 ## Required Tools
 - Git: https://git-scm.com/
 - Node.js: https://nodejs.org/
@@ -29,7 +31,7 @@ Open the Claude Desktop config:
 %APPDATA%\Claude\claude_desktop_config.json
 ```
 
-Add a filesystem server for your project root:
+Add a filesystem server pointing to your workflow environment root:
 
 ```json
 {
@@ -54,6 +56,12 @@ codex mcp add notion --url https://mcp.notion.com/mcp
 codex mcp login notion
 ```
 
+## Claude Desktop Project Instructions (Planner)
+
+Open Claude Desktop → select or create a Project → paste the full contents of `planner/PLANNER_PROJECT.md` into the **Project Instructions** field.
+
+Also set the **Project Path** placeholder inside that file to your absolute workflow environment root before pasting.
+
 ## Agent Teams
 Run `setup.bat` or set:
 
@@ -61,11 +69,12 @@ Run `setup.bat` or set:
 setx CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS 1
 ```
 
-## Setup Checklist
+## Initialization Checklist
 - [ ] Git installed
 - [ ] Node.js installed
 - [ ] Python installed
-- [ ] Claude Desktop installed and MCP configured
+- [ ] Claude Desktop installed and MCP configured for this workflow environment
+- [ ] `planner/PLANNER_PROJECT.md` pasted into Claude Desktop Project Instructions
 - [ ] Claude Code installed
 - [ ] Codex CLI installed
 - [ ] Notion MCP login completed if needed

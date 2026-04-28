@@ -2,10 +2,10 @@
 
 > Canonical document. Korean translation: `docs/USAGE_GUIDE.ko.md`.
 
-Use this template to keep planning, implementation, and status tracking separated.
+This workflow environment keeps planning, implementation, and status tracking separated so each AI agent reads only the context it needs.
 
-## Start a New Project
-1. Create a repository from this template.
+## Initialize a Workflow Environment
+1. Copy or clone this workflow environment into your project directory.
 2. Run `setup.bat` if you use the provided Claude/Codex setup.
 3. Ask Planner to write:
    - `CLAUDE.md`
@@ -29,7 +29,7 @@ Use this template to keep planning, implementation, and status tracking separate
 ```
 
 ## Documentation Rules
-- Read `docs/ARCHITECTURE.en.md` for structure.
+- Read `docs/ARCHITECTURE.en.md` for structure and glossary.
 - Read `docs/SETUP_GUIDE.en.md` for installation.
 - Read `docs/SKILLS.en.md` for commands.
 - Do not duplicate those explanations here.

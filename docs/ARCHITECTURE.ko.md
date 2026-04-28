@@ -2,7 +2,7 @@
 
 > 사람용 번역본입니다. 기준본은 `docs/ARCHITECTURE.en.md`입니다.
 
-이 템플릿은 애플리케이션 코드 템플릿이 아니라 AI 작업 흐름 템플릿입니다. Planner, Team Lead, Teammate가 어떤 문서를 기준으로 설계와 구현을 나누는지 정의합니다.
+이것은 워크플로우 환경(workflow environment)입니다 — AI 보조 개발을 위한 구조화된 컨텍스트입니다. Planner, Team Lead, Teammate 역할 사이에서 설계, 구현, 상태 추적이 어떻게 이동하는지 정의합니다. 애플리케이션 코드 템플릿이 아닙니다.
 
 ## 작업 흐름
 
@@ -56,3 +56,15 @@ Team Lead
 - AI는 기본적으로 모든 문서를 읽지 않습니다.
 - AI는 필요할 때 영어 문서를 우선 읽습니다.
 - 한국어 문서는 사람용 번역본이며 사용자가 요청했을 때만 읽습니다.
+
+## 용어 사전
+
+| 용어 | 정의 |
+|---|---|
+| 워크플로우 환경 (workflow environment) | 이 저장소 구조와 AI 지침 파일 전체. 에이전트 역할 간의 설계, 구현, 상태 추적 방식을 정의합니다. |
+| 루트 컨텍스트 (root context) | 에이전트가 프로젝트 상태를 파악하기 위해 읽는 최소 파일 집합: `CLAUDE.md`, `BLUEPRINT.md`, `TODO.md`, `CHANGELOG.md`. |
+| 실행 청사진 (execution blueprint) | `BLUEPRINT.md` — 모듈 순서, 담당, 인터페이스를 정의하는 단계(Phase) 기반 실행 계획. |
+| 모듈 계약 (module contract) | `src/[module]/CLAUDE.md` — 단일 모듈의 범위가 정해진 구현 계약. |
+| Planner | 계획 문서를 작성하고 프로젝트 구조를 정의하는 에이전트 역할. 구현 코드를 작성하지 않습니다. |
+| Team Lead | 범위를 검증하고 구현을 실행하거나 위임하며 결과를 통합하는 에이전트 역할. |
+| Teammate | 배정된 단일 모듈 안에서만 작업하는 에이전트. 결과를 Team Lead에게 반환합니다. |

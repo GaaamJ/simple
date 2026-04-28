@@ -2,7 +2,7 @@
 
 > Canonical document. Korean translation: `docs/ARCHITECTURE.ko.md`.
 
-This template is an AI workflow template, not an application code template. It defines how planning, implementation, and status tracking should move between Planner, Team Lead, and Teammate agents.
+This is a workflow environment — a structured context for AI-assisted development. It defines how planning, implementation, and status tracking move between Planner, Team Lead, and Teammate roles. It is not an application code template.
 
 ## Workflow
 
@@ -56,3 +56,15 @@ Team Lead
 - AI agents should not read all docs by default.
 - AI agents should read English docs first and only when needed.
 - Korean docs are human-facing translations and should be read only when requested.
+
+## Glossary
+
+| Term | Definition |
+|---|---|
+| workflow environment | This repository structure and its AI instruction files. Defines how planning, implementation, and status tracking are organized across agent roles. |
+| root context | The minimum files an agent reads to understand project state: `CLAUDE.md`, `BLUEPRINT.md`, `TODO.md`, and `CHANGELOG.md`. |
+| execution blueprint | `BLUEPRINT.md` — the phase-based execution plan defining module order, ownership, and interfaces. |
+| module contract | `src/[module]/CLAUDE.md` — the scoped implementation contract for a single module. |
+| Planner | The agent role that writes planning documents and defines project shape. Does not write implementation code. |
+| Team Lead | The agent role that validates scope, executes or delegates implementation, and integrates results. |
+| Teammate | An agent working within a single assigned module. Returns results to Team Lead. |

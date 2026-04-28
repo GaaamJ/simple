@@ -170,17 +170,17 @@ Done criteria:
 
 ## Example Project
 
-- [ ] `examples/` 추가하기
-- [ ] `examples/minimal/` 생성하기
-- [ ] 모든 일반 예시와 placeholder를 `examples/minimal/`로 이동하기
-- [ ] 예시 `CLAUDE.md` 생성하기
-- [ ] 예시 `BLUEPRINT.md` 생성하기
-- [ ] 예시 `TODO.md` 생성하기
-- [ ] 예시 `CHANGELOG.md` 생성하기
-- [ ] 예시 `src/example-module/CLAUDE.md` 생성하기
-- [ ] 예시 `src/example-module/CHANGELOG.md` 생성하기
-- [ ] `examples/README.md` 추가하기
-- [ ] 예시가 루트 워크플로우 상태와 충돌하지 않도록 확인하기
+- [x] `examples/` 추가하기
+- [x] `examples/minimal/` 생성하기
+- [x] 모든 일반 예시와 placeholder를 `examples/minimal/`로 이동하기
+- [x] 예시 `CLAUDE.md` 생성하기
+- [x] 예시 `BLUEPRINT.md` 생성하기
+- [x] 예시 `TODO.md` 생성하기
+- [x] 예시 `CHANGELOG.md` 생성하기
+- [x] 예시 `src/example-module/CLAUDE.md` 생성하기
+- [x] 예시 `src/example-module/CHANGELOG.md` 생성하기
+- [x] `examples/README.md` 추가하기
+- [x] 예시가 루트 워크플로우 상태와 충돌하지 않도록 확인하기
 
 ## Doctor Scripts
 
@@ -202,12 +202,12 @@ Done criteria:
 
 ## Documentation Cleanup
 
-- [ ] 모든 docs에서 오래된 템플릿 지향 언어 감사
-- [ ] 아키텍처 문서를 워크플로우 환경 관점으로 업데이트
-- [ ] 설정 가이드를 워크플로우 환경 초기화 방법으로 업데이트
-- [ ] 사용 가이드를 일상적인 워크플로우 운영 방법으로 업데이트
-- [ ] 스킬 가이드를 `/today`와 `/implementer` 사용법 위주로 업데이트
-- [ ] 용어 사전 추가 (workflow environment, root context, execution blueprint 등)
+- [x] 모든 docs에서 오래된 템플릿 지향 언어 감사
+- [x] 아키텍처 문서를 워크플로우 환경 관점으로 업데이트
+- [x] 설정 가이드를 워크플로우 환경 초기화 방법으로 업데이트
+- [x] 사용 가이드를 일상적인 워크플로우 운영 방법으로 업데이트
+- [x] 스킬 가이드를 `/today`와 `/implementer` 사용법 위주로 업데이트
+- [x] 용어 사전 추가 (workflow environment, root context, execution blueprint 등)
 
 ## Release Workflow
 
