@@ -43,6 +43,7 @@ This is the primary agent-facing context file. Keep it concise and in English.
 - `src/[module]/CHANGELOG.md`: full module-specific history. Created by Planner alongside `src/[module]/CLAUDE.md`. Written by `/implementer` after completing module work.
 - After writing, `/implementer` updates the module's entry in the root Module Summaries section (keep last 1–2 lines).
 - Archive trigger: when either root `CHANGELOG.md` or `src/[module]/CHANGELOG.md` exceeds 15 dated sections, archive entries older than 30 days to `_archive/CHANGELOG_[YYYY-MM].md`.
+- Module retirement: use `/retire-module`. Archives `src/[module]/CLAUDE.md` and `src/[module]/CHANGELOG.md` to `_archive/[module]/`.
 
 ## AI Reading Rules
 - Do not read all of `docs/` by default.

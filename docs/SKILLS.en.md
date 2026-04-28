@@ -37,6 +37,24 @@ Does not:
 
 Use it when you are ready to implement a named task, feature, or module.
 
+## `/retire-module`
+Reads:
+- `CLAUDE.md`
+- `BLUEPRINT.md`
+- `TODO.md`
+- `src/[module]/CLAUDE.md` and `src/[module]/CHANGELOG.md` for the target module
+- `src/[other-module]/CLAUDE.md` for dependency scanning
+
+Three steps: dependency check → plan (waits for confirmation) → execute.
+
+Execute order: update workflow files → delete code → archive `CLAUDE.md` and `CHANGELOG.md` to `_archive/[module]/`.
+
+Does not:
+- proceed if a blocking dependency is unresolved
+- modify or delete files in `_archive/`
+
+Use it to retire a module that is no longer needed.
+
 ## Adding Skills
 Create:
 

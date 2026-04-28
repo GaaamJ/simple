@@ -37,6 +37,24 @@
 
 이름이 정해진 작업, 기능, 모듈을 구현할 때 사용합니다.
 
+## `/retire-module`
+읽는 파일:
+- `CLAUDE.md`
+- `BLUEPRINT.md`
+- `TODO.md`
+- 대상 모듈의 `src/[module]/CLAUDE.md`와 `src/[module]/CHANGELOG.md`
+- 의존성 스캔을 위한 `src/[other-module]/CLAUDE.md`
+
+3단계로 진행: 의존성 체크 → 계획 수립(사용자 확인 대기) → 실행.
+
+실행 순서: 워크플로우 파일 수정 → 코드 삭제 → `CLAUDE.md`와 `CHANGELOG.md`를 `_archive/[module]/`에 아카이브.
+
+하지 않는 일:
+- 블로킹 의존성이 해결되지 않은 상태에서 진행
+- `_archive/` 파일 수정 또는 삭제
+
+더 이상 필요 없는 모듈을 정리할 때 사용합니다.
+
 ## 스킬 추가
 다음 파일을 만듭니다.
 
