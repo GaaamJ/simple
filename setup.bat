@@ -92,6 +92,44 @@ if exist "TODO.md" (
 )
 
 echo.
+echo [4] Health
+
+call :checkpair "docs\ARCHITECTURE"
+call :checkpair "docs\USAGE_GUIDE"
+call :checkpair "docs\SETUP_GUIDE"
+call :checkpair "docs\SKILLS"
+
+if exist "example" (
+    echo   [OK] example\
+    for %%F in (CLAUDE.md BLUEPRINT.md TODO.md CHANGELOG.md) do (
+        if exist "example\%%F" (
+            echo   [OK] example\%%F
+        ) else (
+            echo   [--] example\%%F   - missing
+            set /a WARN+=1
+        )
+    )
+) else (
+    echo   [--] example\   - not present
+    set /a WARN+=1
+)
+
+echo.
+echo ================================================
+echo  Summary
+echo ================================================
+echo.
+if %ERR% equ 0 (
+    if %WARN% equ 0 (
+        echo   PASS
+    ) else (
+        echo   PASS   warnings=%WARN%
+    )
+) else (
+    echo   FAIL   errors=%ERR%   warnings=%WARN%
+)
+
+echo.
 echo ================================================
 echo  Next Step
 echo ================================================
@@ -129,7 +167,6 @@ if "!STATE!"=="ready" (
 )
 
 echo.
-if %WARN% gtr 0 echo   Warnings: %WARN%
 pause
 exit /b 0
 
@@ -138,6 +175,20 @@ if exist "%~1" (
     echo   [OK] %~1
 ) else (
     echo   [!!] %~1   - missing
+    set /a ERR+=1
+)
+exit /b 0
+
+:checkpair
+if exist "%~1.en.md" (
+    if exist "%~1.ko.md" (
+        echo   [OK] %~1 (.en + .ko)
+    ) else (
+        echo   [--] %~1.ko.md   - missing
+        set /a WARN+=1
+    )
+) else (
+    echo   [!!] %~1.en.md   - missing
     set /a ERR+=1
 )
 exit /b 0

@@ -184,21 +184,21 @@ Done criteria:
 
 ## Doctor Scripts
 
-- [ ] `scripts/doctor.bat` 추가하기
-- [ ] `scripts/doctor.sh` 추가하기
-- [ ] 문서 경로 확인
-- [ ] README 링크 확인
-- [ ] docs 언어 쌍 확인
-- [ ] 루트 워크플로우 파일 존재 확인 (CLAUDE.md, BLUEPRINT.md, TODO.md, CHANGELOG.md)
-- [ ] `.claude/skills/today/SKILL.md` 확인
-- [ ] `.claude/skills/implementer/SKILL.md` 확인
-- [ ] `CLAUDE.md` 참조가 실제 파일을 가리키는지 확인
-- [ ] `README.md` 참조가 실제 파일을 가리키는지 확인
-- [ ] `examples/minimal/`에 필수 예시 파일이 있는지 확인
-- [ ] 루트 문서에 해결되지 않은 placeholder 발견 시 경고
-- [ ] "template", "starter", "boilerplate" 표현이 허용 범위 밖에 등장하면 경고
-- [ ] 영어/한국어 문서 쌍 누락 시 경고
-- [ ] 명확한 pass/fail 요약 출력
+- [x] `scripts/doctor.bat` — `setup.bat [4] Health`로 통합 (별도 파일 없음)
+- [x] `scripts/doctor.sh` 추가
+- [x] 문서 경로 확인 (`doctor.sh [1] Reference Links`)
+- [x] README 링크 확인 (`doctor.sh [1] Reference Links`)
+- [x] docs 언어 쌍 확인 (`setup.bat [4] Health` + `doctor.sh [2] Language Pairs`)
+- [x] 루트 워크플로우 파일 존재 확인 (`setup.bat [2] Files` 기존)
+- [x] `.claude/skills/today/SKILL.md` 확인 (`setup.bat [2] Files` 기존)
+- [x] `.claude/skills/implementer/SKILL.md` 확인 (`setup.bat [2] Files` 기존)
+- [x] `CLAUDE.md` 참조가 실제 파일을 가리키는지 확인 (`doctor.sh`)
+- [x] `README.md` 참조가 실제 파일을 가리키는지 확인 (`doctor.sh`)
+- [x] `example/`에 필수 예시 파일이 있는지 확인 (`setup.bat [4] Health`)
+- [x] 루트 문서에 해결되지 않은 placeholder 발견 시 경고 (`setup.bat [3] Planning State` 기존)
+- [x] 영어/한국어 문서 쌍 누락 시 경고 (`setup.bat [4] Health`)
+- [x] 명확한 pass/fail 요약 출력 (`setup.bat Summary` 섹션 추가)
+- [ ] "template", "starter", "boilerplate" 표현 경고 — 보류 (false positive 우려)
 
 ## Documentation Cleanup
 
