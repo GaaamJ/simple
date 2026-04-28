@@ -64,6 +64,10 @@ npm install -g @anthropic-ai/claude-code
 /implementer [task]  # implement it
 ```
 
+> **This repo ships intentionally sparse.** `CLAUDE.md`, `BLUEPRINT.md`, and `TODO.md` are skeleton files — fill them in for your project. The `src/` directory is yours; no application code is generated.
+
+> **Project memory.** Claude Code builds a persistent memory store at `.claude/projects/<path>/memory/` as you work. Agents use it to remember decisions, user preferences, and project context across sessions — no extra setup required.
+
 ## Typical Flow
 
 1. Fill in `CLAUDE.md`, `BLUEPRINT.md`, and `TODO.md` for your project.

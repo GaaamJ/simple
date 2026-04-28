@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Always LF — these must not get CRLF even on Windows checkout
+*.sh        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
